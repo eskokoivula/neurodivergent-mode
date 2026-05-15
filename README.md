@@ -1,6 +1,6 @@
 # Neurodivergent Reasoning Engine
 
-> A Claude skill that produces reframes a neurotypical default pass would not.
+> Neurodivergent reasoning engine that rejects neurotypical default frames and sees the larger system behind the obvious answer.
 
 Most AI brainstorming gives you a cleaner, smarter, better-formatted version of the obvious answer.
 
@@ -54,8 +54,8 @@ Both modes use the same six-step method. Only the input differs.
 ### Claude Code
 
 ```bash
-git clone https://github.com/eskokoivula/neurodivergent-reasoning-engine.git
-cp -r neurodivergent-reasoning-engine/neurodivergent-mode ~/.claude/skills/
+git clone https://github.com/eskokoivula/autist-mode.git
+cp -r autist-mode/neurodivergent-mode ~/.claude/skills/
 ```
 
 Restart Claude Code, or run `claude -c` to continue your current session with the skill loaded. The skill auto-loads when triggered.
