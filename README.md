@@ -2,9 +2,28 @@
 
 > A Claude skill that produces reframes a neurotypical default pass would not.
 
-Most AI brainstorming produces a smarter version of the obvious answer. This skill is designed not to.
+Most AI brainstorming gives you a cleaner, smarter, better-formatted version of the obvious answer.
 
-It applies a disciplined imitation of spectrum-style cognition — bottom-up perception, internal simulation, cross-domain pattern recognition, and rejection of default frames — as a reasoning method. The deliverable is a **structural reframe of the problem**, not a list of more ideas.
+This skill does something else.
+
+It applies a disciplined imitation of neurodivergent-style cognition: bottom-up perception, internal simulation, pattern recognition across completely unrelated domains, and a deep allergic reaction to default frames.
+
+The result is not “10 more ideas.”
+
+The result is:
+“Wait. Are we even asking the right question?”
+
+Humanity has been quietly carried by this kind of thinking for a while. Einstein looked at time and said “what if it’s not fixed?” Newton watched an apple fall and accidentally gave everyone physics homework for 300 years. Tesla helped wire the modern world. Satoshi Tajiri turned bug collecting into Pokémon and permanently altered childhood. The list goes on.
+
+So it is only natural that we now give this cursed blessing to AI.
+
+This repo is not an experiment.
+It is not a productivity hack.
+It is not another prompt pack.
+
+It is a public service.
+
+You’re welcome.
 
 ---
 
