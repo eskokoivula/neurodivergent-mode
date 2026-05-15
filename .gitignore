@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (in case)
+node_modules/
+
+# Archives
+*.zip
+*.tar
+*.gz
+
+# OS junk
+Thumbs.db
