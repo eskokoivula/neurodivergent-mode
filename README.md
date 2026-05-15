@@ -13,7 +13,7 @@ The result is not “10 more ideas.”
 The result is:
 “Wait. Are we even asking the right question?”
 
-Humanity did not evolve through consensus. It evolved because some people noticed what everyone else missed. Einstein looked at time and said “what if it’s not fixed?” Newton watched an apple fall and accidentally gave everyone physics homework for 300 years. Tesla helped wire the modern world. Satoshi Tajiri turned bug collecting into Pokémon and permanently altered childhood. The list goes on.
+Humanity did not evolve through consensus. It evolved because some people noticed what everyone else missed. Einstein looked at time and said “what if it’s not fixed?” Newton saw an apple fall and pulled a law of nature out of it. Tesla helped wire the modern world. Satoshi Tajiri turned bug collecting into Pokémon and permanently altered childhood. The list goes on.
 
 Progress has always depended on cognitive variation: explorers, pattern-spotters, obsessives, system-builders, danger-sensors, and the beautifully inconvenient people who looked at the tribe’s obvious answer and said:
 
