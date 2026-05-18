@@ -31,25 +31,36 @@ You’re welcome.
 
 ---
 
-## The method
+## The core: drift, then return
 
-Six thinking steps, applied in order. Each is internal scaffolding — the visible output is connected reasoning, never a worksheet:
+The engine has one motion: **drift, then return.** Wander off the obvious path on purpose, then come back on purpose to land a usable result. Both halves are mandatory.
 
-1. **Start with raw observations, not a conclusion.** Strip the problem back to its concrete details before any framing is applied.
-2. **Force multiple internal representations.** Picture it, diagram it, find an analogy, isolate the mechanism, push an edge case. Each surfaces different structure.
-3. **Ask what is broken, missing, or inconsistent.** What does the framing leave out? Where does the logic quietly assume something unproven?
-4. **Search for hidden patterns across unrelated domains.** Where else does this same structure appear — biology, history, software, markets, music?
-5. **Build the principle only after the details repeat.** State the principle as a claim, with examples folded inside it. Counting is internal work; it never appears in the output.
-6. **Challenge the default assumption.** Identify the accepted frame and present the reframe as the natural endpoint of the reasoning.
+This is the documented difference between two kinds of mind-wandering. *Spontaneous* wandering is losing the thread. *Deliberate* wandering is steering attention off-task and then steering it back — and only the deliberate kind produces creative results. The engine is built on that distinction.
+
+Drift with no return is a jumpy transcript. Return with no real drift is a filled-in worksheet. The skill is both, in order, every time.
+
+---
+
+## The method: the five-move chain
+
+Drift and return run as a chain of five moves. Moves 1–3 are drift; moves 4–5 are return. The chain is internal scaffolding — the visible output is connected reasoning, never a worksheet.
+
+1. **Start from a concrete detail, not a frame.** Begin with the raw specifics and anomalies. Build the pattern upward; do not hand it down from an assumption.
+2. **Build the scene and run it from the inside.** Simulate the situation internally — picture it, isolate the mechanism, push an edge case.
+3. **Wander to other domains, deliberately.** Find the same structure elsewhere — biology, history, software, markets, music — reaching for far associations.
+4. **Return: zoom out and find the contradiction.** Switch deliberately to the whole-system view and locate the anomaly the accepted frame cannot hold.
+5. **Doubt the frame, build the new principle.** Drop the unexamined assumption, then build the principle that must be true once it is gone.
+
+A worked illustration of this exact chain — Einstein's light-beam thought experiment, step by step — anchors the method in [`neurodivergent-mode/references/foundation.md`](neurodivergent-mode/references/foundation.md).
 
 ---
 
 ## Two modes
 
-Both modes use the same six-step method. Only the input differs.
+Both modes run the same engine. Only the input differs.
 
 - **Primary brainstorming.** Apply directly to a raw problem or question.
-- **Elevation pass.** Apply to an existing brainstorm or analysis to reframe it. Especially powerful as a second stage after a conventional brainstorm — it transforms parts-thinking into systems-thinking.
+- **Elevation pass.** Apply to an existing brainstorm or analysis to reframe it. Especially powerful as a second stage after a conventional brainstorm — it turns parts-thinking into systems-thinking.
 
 ---
 
@@ -73,7 +84,7 @@ Claude.ai does not yet support user-installable skills natively. You can paste t
 ## Trigger phrases
 
 - *"Engage ND mode on this"*
-- *"Brainstorm this in neurodivergent mode"*
+- *"Brainstorm this in neurodivergent mode"* / *"...in autist mode"*
 - *"Elevate this with ND reasoning"*
 - *"What am I missing structurally?"*
 - *"Reframe this — see the system"*
@@ -82,26 +93,19 @@ The skill also triggers proactively when the user is wrestling with a problem th
 
 ---
 
-## Why this works
+## Research foundation
 
-Spectrum-style cognition has a different optimization profile: more detail salience, more internal simulation, more pattern-based reasoning, less automatic acceptance of convention.
+The method's structure is grounded in peer-reviewed research — on mind-wandering and creativity, divergent and convergent thinking, detail-first perception and systemizing, and the double empathy account of social reasoning. Each concept is written out in plain language, with its source cited as a footprint, in [`neurodivergent-mode/references/foundation.md`](neurodivergent-mode/references/foundation.md). The full reference list is at the end of that document.
 
-- **Temple Grandin** describes her own thinking as picture-based and similar to mentally test-running designs before building them.
-- **Einstein** worked through thought experiments — turning problems into mental scenes and examining them from inside.
-- **Tesla** mentally constructed, adjusted, and tested inventions before manufacturing, refining the design until he saw no fault.
-- **Da Vinci's** notebooks show relentless observation converting into principle — a classic bottom-up path to insight.
-
-This skill imitates the *cognitive structure* of that mode for reasoning purposes. It does not claim that all neurodivergent people think this way, or that thinking this way makes anyone neurodivergent.
-
-For the full theoretical foundation, see [`neurodivergent-mode/references/foundation.md`](neurodivergent-mode/references/foundation.md).
+The research supports the *structure* of the method. It does not make this "better thinking" — see below.
 
 ---
 
 ## A note on framing
 
-Do not romanticize neurodivergence. This is not "better thinking." It is **different optimization**. The same cognitive style that produces originality also coexists with overload, communication friction, and inconsistent attention in real life.
+Do not romanticize neurodivergence. This is not "better thinking." It is **different optimization**: more detail salience, more internal simulation, more pattern-based reasoning, less automatic acceptance of convention. The same cognitive style that produces originality also coexists, in real life, with overload, communication friction, and inconsistent attention.
 
-This repo takes the cognitive structure useful for reasoning and applies it deliberately. That is all.
+This repo takes the cognitive structure useful for reasoning and applies it deliberately. It does not claim that all neurodivergent people think this way, or that thinking this way makes anyone neurodivergent. That is all.
 
 ---
 
