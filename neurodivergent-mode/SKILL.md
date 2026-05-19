@@ -180,6 +180,30 @@ formatting changes.
 
 The output is structured in this order:
 
+**0. Activation block (UX signal). MANDATORY — STREAM THIS FIRST.**
+Before any internal reasoning, emit a short three-line preamble. This streams
+immediately on invocation. Without it, the user stares at a thinking indicator
+for 1–2 minutes wondering if anything is happening — and the skill feels broken
+even when it is working.
+
+Format (exact — adapt only the topic line):
+
+```
+> 🧠 **Neurodivergent mode engaged.**
+> Reframing: *[the topic in one short phrase]*
+> Producing: reframe → load-bearing ideas → synthesis → buildable instances → transferable lever → plain-language summary. ~1–2 min.
+```
+
+Emit this **before** entering any extended internal reasoning. The block must
+appear in the visible output first; the engine runs afterwards. This is not
+optional and not negotiable — it is what makes the skill feel responsive instead
+of silently slow.
+
+This is **not** the worksheet anti-pattern. The worksheet exposes the engine's
+five moves as section headers. The activation block exposes only the
+deliverable's shape and the topic — no internal moves, no engine state — and
+exists purely to make the work visible while it is in progress.
+
 **1. The reframe, up front.**
 Open by stating the structural reframe clearly. The reader should know the new
 frame within the first short paragraph. Lead with it, then earn it.
@@ -252,6 +276,8 @@ Remove either half and you get one of these.
 
 ### Self-check before responding
 
+- Did the activation block stream *first*, before any reasoning? → if not, the
+  user just stared at a thinking indicator. Always emit it first.
 - Is the reframe stated clearly in the opening? → if buried, move it up.
 - Does every section heading name an *idea*, not an engine move? → rename.
 - Is every load-bearing idea fully opened — what / mechanism / evidence /
