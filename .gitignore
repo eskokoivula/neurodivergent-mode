@@ -23,3 +23,6 @@ Thumbs.db
 
 # Local session state (per ~/.claude/CLAUDE.md handoff convention)
 HANDOFF.md
+
+# A/B test outputs (local only)
+test-results/
