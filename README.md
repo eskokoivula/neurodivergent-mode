@@ -1,6 +1,6 @@
 # Neurodivergent Reasoning Engine — a Claude skill
 
-> Claude skill: a neurodivergent reasoning engine that rejects neurotypical default frames and sees the larger system behind the obvious answer.
+>  A neurodivergent reasoning engine that rejects neurotypical default frames and sees the larger system behind the obvious answer.
 
 Most AI brainstorming gives you a cleaner, smarter, better-formatted version of the obvious answer.
 
