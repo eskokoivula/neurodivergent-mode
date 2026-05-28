@@ -7,53 +7,39 @@ description: Reframes a problem or elevates an existing idea, plan, or analysis 
 
 ## What this skill does
 
-This skill produces reframes a neurotypical default pass would not generate. Most
-AI brainstorming returns a smarter version of the obvious answer. This skill is
+Produces reframes a neurotypical default pass would not generate. Most AI
+brainstorming returns a smarter version of the obvious answer; this skill is
 built not to.
 
-It does this by running a **reasoning engine** modelled on neurodivergent
-cognition — detail-first perception, deliberate wandering across domains, internal
-simulation, multi-model social reasoning, and rejection of default frames. The
-deliverable is a structural reframe of the problem, not a longer list of ideas.
+It runs a **reasoning engine** modelled on neurodivergent cognition: detail-first
+perception, deliberate wandering across domains, internal simulation, multi-model
+social reasoning, rejection of default frames. The deliverable is a structural
+reframe, not a longer list of ideas.
 
-The skill works in **two modes**, and both run the same engine:
+Two modes, same engine:
 
-- **Primary brainstorming.** Applied to a raw problem or question from scratch.
-- **Elevation pass.** Applied to an existing brainstorm, analysis, or plan to
-  reframe it. Especially powerful as a second stage after a conventional
-  brainstorm — it turns parts-thinking into systems-thinking.
+- **Primary brainstorming** — raw problem from scratch.
+- **Elevation pass** — applied to an existing brainstorm to turn parts-thinking
+  into systems-thinking.
 
-Only the input differs. The engine is identical in both. The deliverable's
-structure is set by the question's *category* (business / personal-reflective /
-philosophical) — see `## Step 0 — Classify the question` — not by which mode
-the skill is in.
+The deliverable's structure is set by the question's *category* (business /
+personal-reflective / philosophical) — see `## Step 0`.
 
 ## When to trigger
 
-This skill is for **reframing**, not generic brainstorming. Trigger when the user:
+Trigger when the user:
 
-- Explicitly asks for "elevate this", "elevate this idea", "elevate this analysis",
-  "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "think like
-  autist", "brainstorm like autist", "ND reframe", "spectrum reframe".
-- Says "reframe this — see the system", "what am I missing structurally", "what's
-  the bigger picture", "go deeper", "find the hidden system".
-- Has just received a brainstorm or analysis and seems unsatisfied with
-  surface-level results — this is the elevation-pass use case.
-- Wants to reframe a problem from scratch with non-default reasoning (not just
-  clarify requirements — that is the brainstorming skill's job, not this one).
-
-Suggest this skill proactively when the user is wrestling with a problem that has
-obvious surface answers but no obvious right answer, or has just produced a
-parts-level output and is looking for more.
+- Says "elevate this", "ND mode", "autist mode", "neurodivergent mode", "think
+  like autist", "ND reframe", "spectrum reframe", "reframe this — see the system",
+  "what am I missing structurally", "go deeper", "find the hidden system".
+- Has just received a parts-level brainstorm and wants more.
+- Wants a reframe with non-default reasoning.
 
 ### Not this skill
 
-If the user is trying to figure out *what* to build — clarifying requirements,
-scoping a feature, choosing approaches — that is the generic brainstorming skill's
-job, not this one. This skill assumes the question is already on the table and
-produces a structural reframe of it. When in doubt, ask the user whether they want
-a reframe of an existing problem (this skill) or help clarifying what they want
-(brainstorming).
+If the user is figuring out *what* to build (clarify requirements, scope,
+choose an approach) — that is the generic brainstorming skill's job. This skill
+assumes the question is on the table and reframes it. When in doubt, ask.
 
 ---
 
@@ -110,120 +96,75 @@ those formats do not contain these sections.
 
 ## The core principle: drift, then return
 
-Everything in this skill rests on one motion. Understand it before anything else.
+The engine works by **deliberate mind-wandering**: it moves off the obvious path
+on purpose (drift), then moves back on purpose to land a usable result (return).
+Both halves are mandatory; order matters. Only *deliberate* wandering produces
+creative results — *spontaneous* drift is losing the thread. (See
+`references/foundation.md`, Section 1.)
 
-The engine works by **deliberate mind-wandering**: it moves *away* from the obvious
-path on purpose (drift), then moves *back* on purpose to land a usable result
-(return). Both halves are mandatory, and the order matters.
-
-This is not loose metaphor — it is the documented difference between two kinds of
-mind-wandering. *Spontaneous* wandering is losing the thread: attention drifts on
-its own and does not come back. *Deliberate* wandering is steering attention
-off-task and then steering it back. Only the deliberate kind produces creative
-results. (See `references/foundation.md`, Section 1.)
-
-So:
-
-- **Drift** = the deliberate move off the obvious path — into raw detail, into
-  unrelated domains, into other people's experience.
-- **Return** = the deliberate move back — build a principle, test it, land a
-  reframe.
-- Drift with no return is a jumpy transcript. Return with no real drift is a
-  filled-in worksheet. The engine is both, in order, every time.
+- **Drift** = deliberate move off path — into detail, other domains, other people's experience.
+- **Return** = deliberate move back — build a principle, test it, land a reframe.
+- Drift without return = jumpy transcript. Return without drift = filled-in worksheet. Both, in order, every time.
 
 ### The engine is not the deliverable
 
-This is the central failure mode of the skill, so it is stated first.
+**The engine** runs in your head — associative, non-linear, jumpy. That jumpiness
+is the drift, and it is where non-default insight comes from. Nobody sees it.
 
-**The engine** runs in your head. It is allowed to be associative, non-linear, and
-jumpy — that jumpiness is the drift, and it is where non-default insight comes
-from. Nobody sees the engine.
-
-**The deliverable** is what the user receives: an engineered synthesis —
-comprehensive, clearly structured, every idea fully opened. The user does not ride
-along inside your thinking. They receive its finished, organised result.
-
-Do the jumpy work in your head. Deliver the structured synthesis.
+**The deliverable** is engineered synthesis — clearly structured, every idea fully
+opened. Do the jumpy work in your head; deliver the structured synthesis.
 
 ---
 
 ## The engine: the five-move chain
 
-The engine runs as a chain of five moves. This chain *is* drift → return made
-concrete. Moves 1–3 are drift; moves 4–5 are return.
+Five moves: 1–3 are drift, 4–5 are return. Einstein's light-beam thought
+experiment in `foundation.md` §5.1 is a worked illustration when the chain
+feels abstract.
 
-A worked illustration of the exact same chain — Einstein's light-beam thought
-experiment, step by step — is in `references/foundation.md`, Section 5.1. That
-example is the anchor: when the chain feels abstract, reread it. The chain is not
-"Einstein's logic" as a separate thing — it is this engine, and the Einstein
-example simply makes the motion visible.
+### Move 1 — Concrete detail, not a frame  *(drift · detail-first)*
 
-### Move 1 — Start from a concrete detail, not a frame  *(drift · detail-first)*
+Begin with the raw specifics — actual details, anomalies, things that do not
+fit the tidy story. **Pattern is built upward from specifics, not handed down
+from an assumption.** Frame too early and the rest of the chain just decorates
+the obvious answer.
 
-Do not begin with "what is wrong here" or with any framing. Begin with the raw,
-concrete specifics of the problem. List — internally — the actual details, the
-anomalies, the things that do not fit the tidy story.
+*Elevation pass:* strip the existing output to concrete claims; find what it
+glossed over.
 
-The rule: **let the pattern be built upward out of the specifics; do not hand it
-down from an assumption.** Local detail is the default; the big-picture frame is
-switched on later, deliberately (Move 4). If you frame too early, the rest of the
-chain just decorates the obvious answer.
+### Move 2 — Run the scene from inside  *(drift · internal simulation)*
 
-In an *elevation pass*, this move means stripping the existing output back to its
-concrete claims and finding the details it glossed over.
-
-### Move 2 — Build the scene and run it from the inside  *(drift · internal simulation)*
-
-Do not calculate or conclude yet. Take the concrete situation and simulate it
-internally: picture it, diagram it, isolate the mechanism, push an edge case, put
-yourself inside it and ask what actually happens.
-
-This is internal simulation — mentally rehearsing how the system behaves before
-committing to a conclusion. Each way of running the scene surfaces different
-structure. These are tools for finding the real framing; they are not items to
+Simulate internally before concluding: picture it, diagram it, push an edge
+case, ask what actually happens. Each way of running the scene surfaces
+different structure. These are tools for finding the framing, not items to
 list in the output.
 
-### Move 3 — Wander to other domains, deliberately  *(drift · divergent)*
+### Move 3 — Wander to other domains  *(drift · divergent)*
 
-Now wander off-road on purpose. Where else does this exact structure appear —
-biology, history, software, physics, markets, games, language, music? Reach for
-*far* associations, not the nearest one.
+Where else does this exact structure appear — biology, history, software,
+physics, markets, games, language, music? Reach for *far* associations. A
+structured detour earns its place only if it brings something back (Move 4).
 
-This is the deliberate part of deliberate wandering: a structured detour, not a
-loss of thread. Generate widely here. The detour earns its place only if you bring
-something back — which is Move 4.
+### Move 4 — Zoom out, find the contradiction  *(return · the hinge)*
 
-### Move 4 — Return: zoom out and find the contradiction  *(return · the hinge)*
+Switch deliberately to the global view. Find the hinge: **the contradiction
+the accepted frame cannot hold.** Somewhere the detail, the simulation, or
+the cross-domain pattern produces an anomaly the default framing cannot
+explain. Trust the anomaly; doubt the frame.
 
-Now switch deliberately to the global view — *zoom out to the whole system*. This
-switch is an explicit act, not a background default.
+### Move 5 — Doubt the frame, build the principle  *(return · selection)*
 
-With the system in view, find the hinge: **the contradiction the accepted frame
-cannot hold.** Somewhere the details from Move 1, the simulation from Move 2, or
-the cross-domain pattern from Move 3 produce something the default framing cannot
-explain. That anomaly is the whole point. Trust the anomaly; doubt the frame.
+Do not conclude "the detail must be wrong." Conclude **the frame must be
+wrong.** Identify the unexamined assumption everyone accepts; drop it. Build
+the principle that must be true once it is gone. Then name the reframe.
 
-### Move 5 — Doubt the frame, build the new principle  *(return · selection)*
+### Two disciplines
 
-Faced with the contradiction, do not conclude "the detail must be wrong." Conclude:
-**the frame must be wrong.** Identify the unexamined assumption everyone accepts,
-and drop it.
-
-Then build the principle that has to be true once that assumption is gone. State
-it as a claim, with the supporting evidence folded inside it. The reframe is not
-decoration on the old frame — it is the structure left standing once the
-contradiction is taken seriously. Build it, then produce the generative leap (see
-Output) and name the reframe.
-
-### Two notes on running the chain
-
-- **Social reasoning runs throughout.** Whenever the problem involves people, hold
-  several interpretations side by side — do not assume one "normal" reading. Treat
-  a breakdown between groups as a *mutual* mismatch, not one group's deficiency.
-  This is a discipline applied across all five moves, not a separate step. (See
-  `foundation.md`, Section 2.3.)
-- **Do not skip moves even when one feels redundant.** The discipline of the full
-  chain is what prevents the "smarter version of the obvious answer" failure.
+- **Social reasoning runs throughout.** When people are involved, hold several
+  interpretations side by side. Treat a breakdown between groups as *mutual*
+  mismatch, not one group's deficiency. (See `foundation.md` §2.3.)
+- **Do not skip moves.** Full chain discipline is what prevents the
+  "smarter version of the obvious answer" failure.
 
 ---
 
@@ -269,15 +210,31 @@ below.
    six-sentence paragraph naming five players.
 
 4. **[Opt-in] Ideas to explore.** Generated *only if* the user said yes in
-   Step 0. Each idea must land on a **concrete, buildable thing** — not
-   "legibility matters" but the specific thing someone could sketch tomorrow.
-   Bold is allowed; ungrounded is not — every leap carries its justification.
+   Step 0. Each idea is a concrete, buildable thing — not "legibility matters"
+   but the specific thing someone could sketch tomorrow. Bold is allowed;
+   ungrounded is not.
 
-   **Pull the MVP out as a bolded bullet line at the end of each idea.** The
-   rest of the idea is prose — mechanism, strategic question, consequence —
-   but the **MVP** (*minimum viable product* — the smallest specific thing
-   buildable next quarter) gets its own line so the reader can scan what is
-   actually buildable.
+   **Each idea must close with a bolded `**MVP:**` block followed by 3–5
+   numbered bullet points** — not a prose sentence. The MVP is the most
+   scan-critical part of the deliverable; visual structure beats prose.
+
+   Format per idea:
+
+   ```
+   ## Idea A: [short name]
+
+   [2-3 prose sentences: what it is, mechanism, strategic question.]
+
+   **MVP:**
+   1. [smallest buildable thing, one line]
+   2. [next concrete step]
+   3. [next]
+   4. [stack / dependency]
+   5. [build time estimate]
+   ```
+
+   Numbered bullets, not dashes. Each bullet ≤ 12 words. The reader scans the
+   MVP block in 5 seconds; if it takes longer, the bullets are too long.
 
 5. **Elevation.** Name the reframe a neurotypical pass would not have produced.
    Then show *how the problem was attacked*: the transferable move — typically,
@@ -380,43 +337,25 @@ buildables.
 
 ## Automatic polish via plain-english-skill
 
-This skill's structured output is an **internal intermediate** — the user should
-never see the raw structured analysis. Before showing the final deliverable to
-the user, automatically polish it with `plain-english-skill`
+The structured output is an **internal intermediate** — the user never sees the
+raw structured analysis. The skill auto-polishes via `plain-english-skill`
 (https://github.com/b1rdmania/claude-plain-english-skill).
 
-### The flow
+**Flow:**
+1. Run Step 0 + 5-move engine internally.
+2. Produce structured output internally — do not show it yet.
+3. Invoke `plain-english-skill` via the Skill tool on the full structured output.
+4. Show the user **only the polished version**.
 
-1. Run Step 0 (classify) and the 5-move engine internally.
-2. Produce the format-specific structured output **internally** — do not show it
-   to the user yet.
-3. **Invoke `plain-english-skill` via the Skill tool** on the full structured
-   output. Pass the entire output as the text to polish.
-4. The user sees **only the polished version**. The raw structured analysis is
-   never shown unless the user explicitly asks for it ("show me the raw output",
-   "before the polish", or similar).
+ND does the structural thinking; plain-english turns it into readable prose. One
+clean deliverable, not two stages.
 
-This is the whole point of the pipeline: ND-skill does the structural thinking;
-plain-english-skill turns it into readable prose. The user receives one clean
-deliverable, not two stages.
+**Fallback if plain-english-skill is not installed:** show structured output +
+one warning line at the end: *"⚠️ plain-english-skill not installed — output not polished. Install: `git clone https://github.com/b1rdmania/claude-plain-english-skill.git` into `~/Desktop/Claude general/Skills/`, then symlink into `~/.claude/skills/`."* Never silently show raw.
 
-### Fallback if plain-english-skill is not installed
-
-If invoking `plain-english-skill` fails (e.g. the skill is not installed in this
-environment), do the following:
-
-1. Show the structured output as-is.
-2. Add one line at the end: *"⚠️ plain-english-skill not installed — output not polished. Install: `git clone https://github.com/b1rdmania/claude-plain-english-skill.git` into `~/Desktop/Claude general/Skills/`, then symlink into `~/.claude/skills/`."*
-
-Do **not** silently emit a raw-looking output; always tell the user when the
-polish stage was skipped.
-
-### What the user can ask for
-
-- *"Show me the raw output"* / *"Before plain-english"* → show the structured
-  pre-polish version (this is the only path that reveals the internal stage).
-- *"Re-polish"* → invoke plain-english-skill again on the same structured output
-  (useful if the first polish overcorrected).
+**User can request:**
+- *"Show me the raw output"* / *"Before plain-english"* → show structured pre-polish.
+- *"Re-polish"* → invoke plain-english-skill again on same structured output.
 
 ---
 
@@ -442,94 +381,59 @@ Remove either half and you get one of these.
 
 ### Self-check before responding
 
-**Category-specific checks** (run the ones that apply to the detected category):
+**Pipeline:**
+- Step 0 ran? Question classified before engine started?
+- Format matches category? (Business format on personal-reflective = restart.)
+- Opt-in respected? Business+yes → Section 4 present with numbered MVP bullets. Business+no → Section 4 absent.
+- Plain-english polish applied? Structured output passed through `plain-english-skill` (Skill tool) before user sees it. If skill missing, show structured + fallback warning.
+- User saw polished version, not raw structured intermediate?
+- No meta-commentary leaked ("Polished version, applying Orwell/Gowers...")?
 
-- **Step 0 ran?** Was the question classified before the engine started? → if not,
-  restart from Step 0.
-- **Format matches category?** Business format produced for a personal-reflective
-  question = restart formatting from the right section in `## Output`.
-- **Opt-in respected (business only)?** If user said *no* to MVPs / ideas-to-explore
-  in Step 0, Section 4 must be **absent**. If user said *yes*, it must be **present**
-  with a bolded **MVP** bullet at the end of each idea.
-- **No fabricated user stories (personal-reflective only)?** Demonstration is
-  cross-domain, historical, fictional, or cultural — **never** an invented
-  first-person anecdote attributed to the user.
-- **Counterargument section present (philosophical only)?** Not a straw man — a
-  real, strongest-form case against own reframe.
-- **Plain-english polish applied?** Was the structured output passed through
-  `plain-english-skill` (via Skill tool) before being shown to the user? If
-  not, invoke it now. If the skill is not installed, show the structured
-  version with the fallback warning line — never silently show raw output.
-- **User saw polished version, not raw?** The user-visible deliverable must be
-  the polish output, not the structured intermediate. The structured version is
-  only shown if the user explicitly asks for it.
-- **No meta-commentary leaked?** Polish-stage process notes like *"Polished
-  version, applying Orwell/Gowers + AI detox..."* or *"Headings dropped per
-  instructions..."* must be stripped before the user sees the result. Show the
-  clean prose only — never the internal description of what was edited.
+**Category rules:**
+- Personal-reflective: Demonstration is cross-domain / historical / fictional / cultural — never a fabricated user anecdote.
+- Philosophical: counterargument section is real (strongest-form against own reframe), not a straw man.
 
-**Universal checks** (every category):
-
-- Is the reframe (or the hook, in personal-reflective) stated clearly in the
-  opening? → if buried, move it up.
-- Does every section heading name an *idea*, not an engine move? → rename.
-- Is every load-bearing idea fully opened — what / mechanism / evidence /
-  consequence? → open the thin ones.
-- Does each body / arguments section open with a bolded **core claim** line? → if
-  missing, add it (does not apply to personal-reflective sections).
-- Does the output read as a transcript of jumpy thinking? → re-engineer into
-  structured synthesis.
-- For business format: does the synthesis use a **table** when listing multiple
-  players or winners/losers? → if a multi-player paragraph, convert it.
-- Does the elevation's lever (business / philosophical) come with a concrete
-  cross-domain example? → add one.
-- For business / philosophical: is the transferable lever stated as a `>` **quote
-  block** at the end of elevation? → wrap it.
-- For business / philosophical: is the plain-language summary in **4–5 bullets**
-  (not prose)? → bullet it.
-- Could a sharp reader say "this is just a smarter version of the obvious answer"?
-  → restart from Move 1.
+**Structure:**
+- Reframe (or hook for personal-reflective) clear in opening?
+- Section headings name *ideas*, not engine moves?
+- Each load-bearing idea opened (what / mechanism / evidence / consequence)?
+- Body/arguments sections open with bolded **core claim**? (Not personal-reflective.)
+- Business synthesis uses **table** when multi-player?
+- Business/philosophical elevation: lever as `>` quote block + cross-domain example?
+- Business/philosophical summary: 4–5 bullets, not prose?
+- MVP block: 3–5 numbered bullets, not prose?
+- Could a sharp reader call this "smarter version of the obvious answer"? → restart from Move 1.
 
 ---
 
-## Section 7 — Citations and research
+## Citations and research
 
-This skill draws on real research (see `references/foundation.md`). When a reframe
-refers to research, findings, or concepts that are not in the user's own materials,
-the following rules apply — they apply to *this skill's own claims* as much as to
-anything else.
+When a reframe refers to research, findings, or concepts not in the user's own
+materials:
 
-- **Search before asserting.** Do not state a research claim from memory. If a
-  claim about a study, statistic, or concept is load-bearing, find the source
-  first.
-- **Verify, then attribute.** State a claim only if it is supported by at least one
-  real source — more for a big claim. Attribute it plainly ("a 2023 meta-analysis
-  found…") so the user can check it.
-- **If no source is found, say so.** Do not present an unsupported claim as fact.
-  "I could not find a reliable source for this" is a valid and required answer.
-- **Separate fact from interpretation.** A sourced finding and your own reframe are
-  different things. Mark interpretation as interpretation — never dress it as
-  "research shows".
-- **Citations are woven in, not listed.** Reference sources in the flow of the
-  prose. Do not append a worksheet-style reference dump to the deliverable.
+- **Search before asserting.** Do not state a research claim from memory; find
+  the source first if the claim is load-bearing.
+- **Verify, then attribute.** Source-backed claims only ("a 2023 meta-analysis found…").
+- **If no source found, say so.** "I could not find a reliable source for this" is a valid answer.
+- **Separate fact from interpretation.** Mark interpretation as interpretation, never as "research shows".
+- **Citations woven in, not listed.** No worksheet-style reference dumps.
 
-The reframe itself is interpretation — that is the skill's job. This section
-ensures the *factual scaffolding* under a reframe is real, not generated.
+The reframe itself is interpretation. This section ensures the factual
+scaffolding under it is real, not generated.
 
 ---
 
 ## Important caution
 
-Do not romanticise neurodivergence. This is not "better thinking" — it is
-*different optimisation*: more detail salience, more internal simulation, more
-pattern-based association, less automatic acceptance of convention. The same style
-that produces originality coexists, in real life, with overload, communication
-friction, and uneven attention. The research does not support a "superpower" story
-(see `foundation.md`, Section 6).
+Do not romanticise neurodivergence. Not "better thinking" — *different
+optimisation*: more detail salience, more internal simulation, more pattern-based
+association, less automatic acceptance of convention. Coexists with overload,
+communication friction, uneven attention. The research does not support a
+"superpower" story (see `foundation.md` §6).
 
-This skill imitates the cognitive *structure* for reasoning purposes. It does not
-claim that all neurodivergent people think this way, or that thinking this way
-makes anyone neurodivergent.
+This skill imitates the cognitive *structure* for reasoning. It does not claim
+all neurodivergent people think this way, or that thinking this way makes anyone
+neurodivergent.
 
 ## Foundation
 
