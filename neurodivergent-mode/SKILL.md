@@ -1,6 +1,6 @@
 ---
 name: neurodivergent-mode
-description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, see the structural answer the obvious one misses, write a personal-reflective essay or opinion piece (e.g., application essays, blog posts), or work through a philosophical / conceptual question. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", "reflect on this", "elevate this as essay", "elevate this as strategy", "elevate this philosophically", "philosophise this", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. The skill classifies the question into one of three categories (business / strategy, personal-reflective / opinion, philosophical / conceptual) and produces output matched to that category — strategic deliverables for business questions, essayistic answers for personal-reflective questions, and analytical-essay shape with counterarguments for philosophical questions. The structured output is automatically polished via `plain-english-skill` (invoked internally as the final stage) before being shown to the user — the user receives one clean deliverable, never the raw structured analysis, unless they explicitly ask to see it.
+description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, see the structural answer the obvious one misses, write a personal-reflective essay or opinion piece (e.g., application essays, blog posts), or work through a philosophical / conceptual question. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", "reflect on this", "elevate this as essay", "elevate this as strategy", "elevate this philosophically", "philosophise this", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. The skill classifies the question into one of three categories (business / strategy, personal-reflective / opinion, philosophical / conceptual) and produces output matched to that category — strategic deliverables for business questions, essayistic answers for personal-reflective questions, and analytical-essay shape with counterarguments for philosophical questions. The structured output is polished in the same reasoning step using integrated Orwell/Gowers + AI detox rules before being shown to the user — the user receives one clean deliverable, never the raw structured analysis, unless they explicitly ask to see it.
 ---
 
 # Neurodivergent Mode
@@ -173,9 +173,8 @@ the principle that must be true once it is gone. Then name the reframe.
 The 5-move engine runs the same in all three formats. Only the output structure
 differs, based on the category detected in `## Step 0 — Classify the question`.
 
-After the format-specific output is complete, the entire output is handed off to
-`plain-english-skill` for final polish — see `## Handoff to plain-english-skill`
-below.
+The structured output is then polished in the same reasoning step (Orwell/Gowers
++ AI detox rules — see `## Polish` below) before being shown to the user.
 
 ### Surface formatting by environment
 
@@ -335,27 +334,72 @@ buildables.
 
 ---
 
-## Automatic polish via plain-english-skill
+## Polish: apply integrated, in the same step
 
-The structured output is an **internal intermediate** — the user never sees the
-raw structured analysis. The skill auto-polishes via `plain-english-skill`
-(https://github.com/b1rdmania/claude-plain-english-skill).
+The structured output never reaches the user as-is. Apply the polish rules below
+**in the same reasoning step that produced the output** — do not invoke a
+separate skill. The user sees one clean deliverable.
 
-**Flow:**
-1. Run Step 0 + 5-move engine internally.
-2. Produce structured output internally — do not show it yet.
-3. Invoke `plain-english-skill` via the Skill tool on the full structured output.
-4. Show the user **only the polished version**.
+(These rules are adapted from `plain-english-skill` by Birdmania —
+https://github.com/b1rdmania/claude-plain-english-skill — and integrated here
+to remove the second skill-activation cost.)
 
-ND does the structural thinking; plain-english turns it into readable prose. One
-clean deliverable, not two stages.
+### Orwell/Gowers (apply first)
 
-**Fallback if plain-english-skill is not installed:** show structured output +
-one warning line at the end: *"⚠️ plain-english-skill not installed — output not polished. Install: `git clone https://github.com/b1rdmania/claude-plain-english-skill.git` into `~/Desktop/Claude general/Skills/`, then symlink into `~/.claude/skills/`."* Never silently show raw.
+1. Cut every word that adds nothing.
+2. Active voice over passive. If you can name the agent, name it.
+3. Concrete nouns over abstract subjects.
+4. Short word over long. Saxon over Latinate (*use* over *utilise*, *help* over *facilitate*, *before* over *prior to*).
+5. Single word over circumlocution (*because* over *due to the fact that*).
+6. No dying metaphors (*toe the line*, *Achilles' heel*, *at the end of the day*).
+7. Break a rule rather than write something barbarous. Clarity wins.
 
-**User can request:**
-- *"Show me the raw output"* / *"Before plain-english"* → show structured pre-polish.
-- *"Re-polish"* → invoke plain-english-skill again on same structured output.
+### AI detox (apply second)
+
+8. **Banned vocabulary — substitute or delete:**
+   *delve, tapestry, navigate, leverage, landscape, ecosystem, realm,
+   multifaceted, foster, underscore, robust, comprehensive, nuanced, paramount,
+   crucial, holistic, pivotal, facilitate, utilize, methodology, commence,
+   endeavour, numerous, approximately, ameliorate, expedite, terminate.*
+9. **Em-dash budget.** Max one em-dash per ~200 words. Default to commas, full stops, new sentences. Em-dash overuse is the loudest AI tell.
+10. **No preamble.** Don't open with *"That's a great question,"* *"Certainly,"* *"I'd be happy to,"* or framing. Start with the answer.
+11. **No summary closer.** No *"In conclusion,"* *"To sum up,"* *"I hope this helps."*
+12. **No false balance.** When one side outweighs the other, say so.
+13. **No reflex rule-of-three.** If content has two or four points, use two or four. Don't pad.
+14. **Vary sentence length.** Mix short punchy sentences with longer ones. AI clusters around 18–22 words; good prose ranges 4–40.
+15. **No sycophancy.** No *"great point"* or validating the user's framing.
+16. **Cut hedge stacks.** *Genuinely, honestly, it's worth noting, I find that, arguably* — one hedge per claim, max.
+
+### Banned constructions (substitute)
+
+| Phrase | Fix |
+|---|---|
+| in the realm of / landscape of / world of | in |
+| it is important to note that / it's worth noting that | (delete) |
+| due to the fact that | because |
+| in the event that | if |
+| with regard to | about |
+| in light of | given, because of |
+| prior to | before |
+| in order to | to |
+| a variety of / a number of | many, several / some |
+
+### When NOT to apply
+
+- Direct quotes from the user or sources → leave them.
+- Code, technical specs, legal text → don't tighten load-bearing jargon.
+- Deliberate dialect (period pastiche, AAVE, etc.) → ask before changing.
+- Personal-reflective Hook: the user's own framing in the prompt may stay as-is.
+
+### Two-step discipline
+
+1. **Flag first.** Walk every sentence against the rules. Don't pre-filter for "voice".
+2. **Override second.** For each flag, decide if rule 7 applies. Name the reason in one word: *rhythm, emphasis, picture, idiom, joke*. If no reason, take the fix.
+
+### User can request
+
+- *"Show me the raw output"* / *"Before the polish"* → show the structured pre-polish version (only path that reveals the internal stage).
+- *"Re-polish"* → apply the polish rules again on the structured output (useful if the first pass overcorrected).
 
 ---
 
@@ -385,7 +429,7 @@ Remove either half and you get one of these.
 - Step 0 ran? Question classified before engine started?
 - Format matches category? (Business format on personal-reflective = restart.)
 - Opt-in respected? Business+yes → Section 4 present with numbered MVP bullets. Business+no → Section 4 absent.
-- Plain-english polish applied? Structured output passed through `plain-english-skill` (Skill tool) before user sees it. If skill missing, show structured + fallback warning.
+- Polish applied? Orwell/Gowers + AI detox rules (see `## Polish`) applied in same step as structured output? User never sees raw structured intermediate.
 - User saw polished version, not raw structured intermediate?
 - No meta-commentary leaked ("Polished version, applying Orwell/Gowers...")?
 
