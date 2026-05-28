@@ -1,6 +1,6 @@
 ---
 name: neurodivergent-mode
-description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, see the structural answer the obvious one misses, write a personal-reflective essay or opinion piece (e.g., application essays, blog posts), or work through a philosophical / conceptual question. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", "reflect on this", "elevate this as essay", "elevate this as strategy", "elevate this philosophically", "philosophise this", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. The skill classifies the question into one of three categories (business / strategy, personal-reflective / opinion, philosophical / conceptual) and produces output matched to that category — strategic deliverables for business questions, essayistic answers for personal-reflective questions, and analytical-essay shape with counterarguments for philosophical questions. The structured output is polished in the same reasoning step using integrated Orwell/Gowers + AI detox rules before being shown to the user — the user receives one clean deliverable, never the raw structured analysis, unless they explicitly ask to see it.
+description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, see the structural answer the obvious one misses, write a personal-reflective essay or opinion piece (e.g., application essays, blog posts), or work through a philosophical / conceptual question. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", "reflect on this", "elevate this as essay", "elevate this as strategy", "elevate this philosophically", "philosophise this", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. The skill classifies the question into one of three categories (business / strategy, personal-reflective / opinion, philosophical / conceptual) and produces output matched to that category — strategic deliverables for business questions, essayistic answers for personal-reflective questions, and analytical-essay shape with counterarguments for philosophical questions. The structured output is polished in the same reasoning step using integrated Orwell/Gowers + AI detox rules before being shown to the user — the user receives one clean deliverable, never the raw structured analysis, unless they explicitly ask to see it. Before running, the skill offers two modes (like a model pick): "ADHD mode" (faster, leaner reasoning) or "Full autist mode" (broader, deeper) — the user can also force one directly with "adhd mode" / "fast" or "full autist" / "deep" in their request.
 ---
 
 # Neurodivergent Mode
@@ -43,14 +43,51 @@ assumes the question is on the table and reframes it. When in doubt, ask.
 
 ---
 
-## Step 0 — Classify the question
+## Step 0 — Open: classify, then pick a mode
 
-Before running the engine, classify the question into one of three categories.
-The 5-move engine (drift → return) runs the same in all three; only the output
-structure differs. The structure is defined in `## Output: three context-aware
-formats`.
+When the skill triggers, do these in order. The slow engine starts only *after*
+the user picks a mode, so the opening is instant.
 
-**Mechanism: hybrid auto-detect + explicit override triggers.**
+1. **Classify silently.** Read the prompt, decide the category (business /
+   personal-reflective / philosophical) using the signals below. Do not narrate
+   this — it is cheap.
+2. **Ask one message — the mode pick.** Offer the two modes (ADHD recommended for
+   speed). If the category is business, fold the MVP opt-in into the *same*
+   message — one round-trip, not two. See "The opening question" below.
+3. **Trigger-word shortcut.** If the user already named a mode, skip the mode
+   question. `"adhd mode"` / `"fast"` → ADHD. `"full autist"` / `"deep"` → Full
+   autist. (For business with a mode word given, still ask the MVP opt-in.)
+4. **Run the engine in the chosen mode**, then produce the category's output format.
+
+### The two modes
+
+Both run the same 5-move drift→return engine and the same output formats. They
+differ only in *how widely the engine explores* and *how the output is written*.
+
+| Dimension | ADHD mode (fast) | Full autist mode (deep) |
+|---|---|---|
+| Engine breadth | One decisive anomaly; 1–2 cross-domain patterns max | Wide wandering; many domains explored |
+| Move 2 simulation | Minimal — just enough to find the hinge | Full, multiple runs |
+| `foundation.md` | Not read | May consult to deepen |
+| Writing | Single pass — written already polished | Produce, then polish |
+| Load-bearing ideas | 2 | 3–4 |
+| Self-check | Slim (key checks only) | Full |
+| Feel | Tighter, faster | Richer, slower |
+
+ADHD mode trades a little breadth for speed: it may miss the occasional far
+analogy a wide search would find. Full autist is the full depth, no compromise.
+**Neither changes** the reframe logic, the categories, the output structures, or
+the polish standards.
+
+### The opening question
+
+Ask in one short message, then stop and wait for the answer. Two shapes:
+
+- **Non-business:** *"ADHD mode (nopeampi) vai Full autist (laajempi, syvempi)? — ADHD riittää useimmiten."*
+- **Business:** combine with the MVP opt-in: *"Kaksi valintaa: (1) ADHD mode (nopeampi) vai Full autist (laajempi)? (2) Haluatko MVP-ehdotuksia / ideas-to-explore mukaan?"*
+
+When a mode trigger word is already present, skip straight to running (ask only
+the MVP opt-in if business).
 
 ### Auto-detect signals
 
@@ -80,17 +117,15 @@ of the output, so the user can correct mid-turn:
 
 > *"Detected: business/strategy. Override with 'elevate this as essay' if wrong."*
 
-### If business is detected: ask about optional sections
+### MVP opt-in (business only)
 
-Business format has two optional elements (**Ideas to explore** with bolded **MVP**
-bullets — see `## Output: three context-aware formats`, Section 2a). These are
-opt-in. Before running the engine, ask the user:
+Business format has one optional element: **Ideas to explore** with numbered
+**MVP** bullets (see Format 2a, Section 4). It is opt-in, asked as part of the
+opening question above (folded into the same message as the mode pick).
 
-> *"Haluatko MVP-ehdotuksia ja/tai ideas-to-explore osaksi vastausta?"*
-
-Capture the answer. If yes, include Section 4 in the business format. If no,
-omit it. Do not ask this for personal-reflective or philosophical questions —
-those formats do not contain these sections.
+If the user says yes, include Section 4. If no, omit it. Never ask this for
+personal-reflective or philosophical questions — those formats have no such
+section.
 
 ---
 
@@ -118,9 +153,16 @@ opened. Do the jumpy work in your head; deliver the structured synthesis.
 
 ## The engine: the five-move chain
 
-Five moves: 1–3 are drift, 4–5 are return. Einstein's light-beam thought
-experiment in `foundation.md` §5.1 is a worked illustration when the chain
-feels abstract.
+Five moves: 1–3 are drift, 4–5 are return.
+
+**Mode governs depth here (see Step 0a):**
+- **ADHD mode** — run the chain *tight*. One decisive anomaly, 1–2 cross-domain
+  patterns, one principle. Keep internal reasoning economical: do not enumerate
+  many domains, do not draft-then-rewrite, do not read `foundation.md`. Find the
+  hinge fast and write.
+- **Full autist mode** — run the chain *wide*. Explore many domains, simulate
+  fully, consult `foundation.md` §5.1 (the Einstein light-beam example) when the
+  chain feels abstract.
 
 ### Move 1 — Concrete detail, not a frame  *(drift · detail-first)*
 
@@ -134,16 +176,17 @@ glossed over.
 
 ### Move 2 — Run the scene from inside  *(drift · internal simulation)*
 
-Simulate internally before concluding: picture it, diagram it, push an edge
-case, ask what actually happens. Each way of running the scene surfaces
-different structure. These are tools for finding the framing, not items to
-list in the output.
+Simulate internally before concluding: picture it, push an edge case, ask what
+actually happens. *ADHD mode: one quick run, just enough to surface the hinge.
+Full autist: run it several ways.* These find the framing; they are not items
+to list in the output.
 
 ### Move 3 — Wander to other domains  *(drift · divergent)*
 
-Where else does this exact structure appear — biology, history, software,
-physics, markets, games, language, music? Reach for *far* associations. A
-structured detour earns its place only if it brings something back (Move 4).
+Where else does this exact structure appear? *ADHD mode: reach for 1–2 far
+patterns and move on — no domain tour. Full autist: wander widely across
+biology, history, software, physics, markets, games, language, music.* A detour
+earns its place only if it brings something back (Move 4).
 
 ### Move 4 — Zoom out, find the contradiction  *(return · the hinge)*
 
@@ -171,7 +214,7 @@ the principle that must be true once it is gone. Then name the reframe.
 ## Output: three context-aware formats
 
 The 5-move engine runs the same in all three formats. Only the output structure
-differs, based on the category detected in `## Step 0 — Classify the question`.
+differs, based on the category detected in `## Step 0 — Open: classify, then pick a mode`.
 
 The structured output is then polished in the same reasoning step (Orwell/Gowers
 + AI detox rules — see `## Polish` below) before being shown to the user.
@@ -340,6 +383,12 @@ The structured output never reaches the user as-is. Apply the polish rules below
 **in the same reasoning step that produced the output** — do not invoke a
 separate skill. The user sees one clean deliverable.
 
+**By mode:**
+- **ADHD mode** — write the deliverable *once*, already polished. Treat the rules
+  below as writing constraints, not a separate rewrite pass. One quick scan at the
+  end, not a sentence-by-sentence audit.
+- **Full autist mode** — write, then do a full polish pass over it.
+
 (These rules are adapted from `plain-english-skill` by Birdmania —
 https://github.com/b1rdmania/claude-plain-english-skill — and integrated here
 to remove the second skill-activation cost.)
@@ -425,28 +474,22 @@ Remove either half and you get one of these.
 
 ### Self-check before responding
 
-**Pipeline:**
-- Step 0 ran? Question classified before engine started?
-- Format matches category? (Business format on personal-reflective = restart.)
-- Opt-in respected? Business+yes → Section 4 present with numbered MVP bullets. Business+no → Section 4 absent.
-- Polish applied? Orwell/Gowers + AI detox rules (see `## Polish`) applied in same step as structured output? User never sees raw structured intermediate.
-- User saw polished version, not raw structured intermediate?
-- No meta-commentary leaked ("Polished version, applying Orwell/Gowers...")?
+**ADHD mode — slim check (these five only, fast):**
+1. Mode picked before the engine ran? Format matches category?
+2. Opt-in respected? (Business+yes → Section 4 with numbered MVP bullets; business+no → absent.)
+3. Personal-reflective Demonstration is cross-domain / historical / fictional — never a fabricated user anecdote.
+4. Polished as written, no meta-commentary leaked, user sees no raw intermediate.
+5. Not just a "smarter version of the obvious answer"? → if it is, restart from Move 1.
 
-**Category rules:**
-- Personal-reflective: Demonstration is cross-domain / historical / fictional / cultural — never a fabricated user anecdote.
-- Philosophical: counterargument section is real (strongest-form against own reframe), not a straw man.
-
-**Structure:**
-- Reframe (or hook for personal-reflective) clear in opening?
+**Full autist mode — full check (the slim five, plus):**
+- Philosophical: counterargument section is real (strongest-form), not a straw man.
+- Reframe (or hook) clear in opening?
 - Section headings name *ideas*, not engine moves?
 - Each load-bearing idea opened (what / mechanism / evidence / consequence)?
 - Body/arguments sections open with bolded **core claim**? (Not personal-reflective.)
 - Business synthesis uses **table** when multi-player?
 - Business/philosophical elevation: lever as `>` quote block + cross-domain example?
 - Business/philosophical summary: 4–5 bullets, not prose?
-- MVP block: 3–5 numbered bullets, not prose?
-- Could a sharp reader call this "smarter version of the obvious answer"? → restart from Move 1.
 
 ---
 
