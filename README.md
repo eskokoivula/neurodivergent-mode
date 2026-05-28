@@ -17,7 +17,7 @@ Humanity did not evolve through consensus. It evolved because some people notice
 
 Progress has always depended on cognitive variation: explorers, pattern-spotters, obsessives, system-builders, danger-sensors, and the beautifully inconvenient people who looked at the tribe’s obvious answer and said:
 
-“No. That is not the real problem."
+“No. That is not the real problem.”
 
 So it is only natural that we now give this cursed blessing to AI.
 
@@ -55,12 +55,43 @@ A worked illustration of this exact chain — Einstein's light-beam thought expe
 
 ---
 
-## Two modes
+## Two modes: ADHD and Full autist
 
-Both modes run the same engine. Only the input differs.
+Before it runs, the skill offers a mode — like picking a model.
 
-- **Primary brainstorming.** Apply directly to a raw problem or question.
-- **Elevation pass.** Apply to an existing brainstorm or analysis to reframe it. Especially powerful as a second stage after a conventional brainstorm — it turns parts-thinking into systems-thinking.
+- **ADHD mode** — faster and leaner. A tight engine: one decisive anomaly, one or two cross-domain patterns, written in a single pass. Use it when you want the reframe quickly.
+- **Full autist mode** — broader and deeper. Wide wandering across many domains, fuller internal simulation, richer output. Use it when you want maximum depth and don't mind waiting.
+
+Same engine, same output formats, same quality bar. The modes differ only in how widely the engine explores and how long it takes. Full autist is the original, unabridged behavior; ADHD trades a little breadth for speed.
+
+Pick by answering the opening question, or skip it by naming the mode in your request: `adhd mode` / `fast`, or `full autist` / `deep`.
+
+---
+
+## What you get: three output formats
+
+The skill reads your question and matches the output to its kind. You don't choose the format — it detects it.
+
+- **Business / strategy** — a structured deliverable: the reframe, load-bearing ideas, a winners/losers synthesis table, an optional "ideas to explore" section with concrete MVPs, and a transferable lever stated as a quote. It asks once whether you want the MVP / ideas section.
+- **Personal-reflective / opinion** — a first-person essay: a hook, what resonates, the underlying mechanism, a demonstration, and where it leads. No business scaffolding, no bullet lists. Built for application essays, opinion pieces, blog posts.
+- **Philosophical / conceptual** — an analytical essay with a real counterargument section, a synthesis of what stays open, and the implications.
+
+To force a format, say `reflect on this` (personal essay), `elevate this philosophically` (philosophical), or `elevate this as strategy` (business).
+
+---
+
+## Plain English, built in
+
+Every output is cleaned before you see it: AI tics stripped, em-dashes cut to budget, passive voice activated, padding removed. The rules are adapted from [Birdmania's plain-english-skill](https://github.com/b1rdmania/claude-plain-english-skill) and run *inside* this skill — nothing extra to install. The structured analysis stays internal; you get the clean prose. Ask for "the raw output" if you ever want the pre-polish version.
+
+---
+
+## Primary use, or elevation pass
+
+Both run the same engine — only the input differs.
+
+- **Primary.** Apply directly to a raw problem or question.
+- **Elevation pass.** Apply to an existing brainstorm or analysis to reframe it. Powerful as a second stage after a conventional brainstorm: it turns parts-thinking into systems-thinking.
 
 ---
 
@@ -83,11 +114,24 @@ Claude.ai does not yet support user-installable skills natively. You can paste t
 
 ## Trigger phrases
 
+**Activate it:**
+
 - *"Elevate this"* / *"Elevate this idea"* / *"Elevate this analysis"*
 - *"Engage ND mode on this"* / *"Autist mode"* / *"Neurodivergent mode"*
 - *"Reframe this — see the system"*
 - *"What am I missing structurally?"*
 - *"ND reframe"* / *"Spectrum reframe"*
+
+**Pick a mode** (optional — otherwise it asks):
+
+- *"adhd mode"* / *"fast"* → lean and quick
+- *"full autist"* / *"deep"* → broad and thorough
+
+**Force an output format** (optional — otherwise it detects):
+
+- *"reflect on this"* → personal-reflective essay
+- *"elevate this philosophically"* / *"philosophise this"* → philosophical
+- *"elevate this as strategy"* → business / strategy
 
 The skill also triggers proactively when the user is wrestling with a problem that has obvious surface answers but no obvious right answer.
 
