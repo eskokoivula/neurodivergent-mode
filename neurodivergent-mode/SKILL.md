@@ -1,6 +1,6 @@
 ---
 name: neurodivergent-mode
-description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, see the structural answer the obvious one misses, write a personal-reflective essay or opinion piece (e.g., application essays, blog posts), or work through a philosophical / conceptual question. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", "reflect on this", "elevate this as essay", "elevate this as strategy", "elevate this philosophically", "philosophise this", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. The skill classifies the question into one of three categories (business / strategy, personal-reflective / opinion, philosophical / conceptual) and produces output matched to that category — strategic deliverables for business questions, essayistic answers for personal-reflective questions, and analytical-essay shape with counterarguments for philosophical questions. Final output is handed off to `plain-english-skill` for reader-facing polish.
+description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, see the structural answer the obvious one misses, write a personal-reflective essay or opinion piece (e.g., application essays, blog posts), or work through a philosophical / conceptual question. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", "reflect on this", "elevate this as essay", "elevate this as strategy", "elevate this philosophically", "philosophise this", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. The skill classifies the question into one of three categories (business / strategy, personal-reflective / opinion, philosophical / conceptual) and produces output matched to that category — strategic deliverables for business questions, essayistic answers for personal-reflective questions, and analytical-essay shape with counterarguments for philosophical questions. The structured output is automatically polished via `plain-english-skill` (invoked internally as the final stage) before being shown to the user — the user receives one clean deliverable, never the raw structured analysis, unless they explicitly ask to see it.
 ---
 
 # Neurodivergent Mode
@@ -378,22 +378,45 @@ buildables.
 
 ---
 
-## Handoff to plain-english-skill
+## Automatic polish via plain-english-skill
 
-This skill's output is structured analysis. The final reader-facing polish is
-delegated to `plain-english-skill`
+This skill's structured output is an **internal intermediate** — the user should
+never see the raw structured analysis. Before showing the final deliverable to
+the user, automatically polish it with `plain-english-skill`
 (https://github.com/b1rdmania/claude-plain-english-skill).
 
-Once the format-specific output is generated, end with a single line:
+### The flow
 
-> *Output ready for plain-english-skill — invoke it on the full output above to remove AI-language patterns, tighten passives, and produce the final reader version.*
+1. Run Step 0 (classify) and the 5-move engine internally.
+2. Produce the format-specific structured output **internally** — do not show it
+   to the user yet.
+3. **Invoke `plain-english-skill` via the Skill tool** on the full structured
+   output. Pass the entire output as the text to polish.
+4. The user sees **only the polished version**. The raw structured analysis is
+   never shown unless the user explicitly asks for it ("show me the raw output",
+   "before the polish", or similar).
 
-Claude Code does not natively chain skills. The handoff line signals the next
-step to the orchestrator (Claude reading the output). The user or Claude then
-invokes `plain-english-skill` on the produced text.
+This is the whole point of the pipeline: ND-skill does the structural thinking;
+plain-english-skill turns it into readable prose. The user receives one clean
+deliverable, not two stages.
 
-If `plain-english-skill` is not installed, the output is still useful as raw
-structured analysis — it simply has not been smoothed.
+### Fallback if plain-english-skill is not installed
+
+If invoking `plain-english-skill` fails (e.g. the skill is not installed in this
+environment), do the following:
+
+1. Show the structured output as-is.
+2. Add one line at the end: *"⚠️ plain-english-skill not installed — output not polished. Install: `git clone https://github.com/b1rdmania/claude-plain-english-skill.git` into `~/Desktop/Claude general/Skills/`, then symlink into `~/.claude/skills/`."*
+
+Do **not** silently emit a raw-looking output; always tell the user when the
+polish stage was skipped.
+
+### What the user can ask for
+
+- *"Show me the raw output"* / *"Before plain-english"* → show the structured
+  pre-polish version (this is the only path that reveals the internal stage).
+- *"Re-polish"* → invoke plain-english-skill again on the same structured output
+  (useful if the first polish overcorrected).
 
 ---
 
@@ -433,7 +456,17 @@ Remove either half and you get one of these.
   first-person anecdote attributed to the user.
 - **Counterargument section present (philosophical only)?** Not a straw man — a
   real, strongest-form case against own reframe.
-- **Handoff line present?** Single quoted line at end pointing to plain-english-skill.
+- **Plain-english polish applied?** Was the structured output passed through
+  `plain-english-skill` (via Skill tool) before being shown to the user? If
+  not, invoke it now. If the skill is not installed, show the structured
+  version with the fallback warning line — never silently show raw output.
+- **User saw polished version, not raw?** The user-visible deliverable must be
+  the polish output, not the structured intermediate. The structured version is
+  only shown if the user explicitly asks for it.
+- **No meta-commentary leaked?** Polish-stage process notes like *"Polished
+  version, applying Orwell/Gowers + AI detox..."* or *"Headings dropped per
+  instructions..."* must be stripped before the user sees the result. Show the
+  clean prose only — never the internal description of what was edited.
 
 **Universal checks** (every category):
 
