@@ -1,6 +1,6 @@
 ---
 name: neurodivergent-mode
-description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, or see the structural answer the obvious one misses. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. Especially powerful as a second-stage elevation pass after a conventional brainstorm — it turns parts-thinking into systems-thinking. The deliverable is always a structural reframe a neurotypical default pass would not produce, with concrete buildable instances and a transferable lever.
+description: Reframes a problem or elevates an existing idea, plan, or analysis by applying neurodivergent (spectrum-style) cognition as a reasoning engine — bottom-up detail-first perception, deliberate mind-wandering across domains, internal simulation, multi-model social reasoning, and rejection of default frames. Use this skill when the user wants to reframe a problem, elevate an existing analysis or idea, find the hidden system behind symptoms, see the structural answer the obvious one misses, write a personal-reflective essay or opinion piece (e.g., application essays, blog posts), or work through a philosophical / conceptual question. Explicit triggers: "elevate this", "elevate this idea", "elevate this analysis", "engage ND mode", "ND mode", "autist mode", "neurodivergent mode", "reframe this — see the system", "what am I missing structurally", "think like autist", "brainstorm like autist", "ND reframe", "spectrum reframe", "reflect on this", "elevate this as essay", "elevate this as strategy", "elevate this philosophically", "philosophise this", or similar phrasing. Distinct from generic brainstorming: brainstorming clarifies *what to build*; this skill produces a structural *reframe* of what is already on the table. The skill classifies the question into one of three categories (business / strategy, personal-reflective / opinion, philosophical / conceptual) and produces output matched to that category — strategic deliverables for business questions, essayistic answers for personal-reflective questions, and analytical-essay shape with counterarguments for philosophical questions. Final output is handed off to `plain-english-skill` for reader-facing polish.
 ---
 
 # Neurodivergent Mode
@@ -23,7 +23,10 @@ The skill works in **two modes**, and both run the same engine:
   reframe it. Especially powerful as a second stage after a conventional
   brainstorm — it turns parts-thinking into systems-thinking.
 
-Only the input differs. The engine and the deliverable are identical in both.
+Only the input differs. The engine is identical in both. The deliverable's
+structure is set by the question's *category* (business / personal-reflective /
+philosophical) — see `## Step 0 — Classify the question` — not by which mode
+the skill is in.
 
 ## When to trigger
 
@@ -51,6 +54,57 @@ job, not this one. This skill assumes the question is already on the table and
 produces a structural reframe of it. When in doubt, ask the user whether they want
 a reframe of an existing problem (this skill) or help clarifying what they want
 (brainstorming).
+
+---
+
+## Step 0 — Classify the question
+
+Before running the engine, classify the question into one of three categories.
+The 5-move engine (drift → return) runs the same in all three; only the output
+structure differs. The structure is defined in `## Output: three context-aware
+formats`.
+
+**Mechanism: hybrid auto-detect + explicit override triggers.**
+
+### Auto-detect signals
+
+Read the prompt for these patterns:
+
+| Signal in the prompt | Category |
+|---|---|
+| Second-person addressing of the user ("you / sinä"), "miksi sinusta", "why does X resonate with you", opinion request, application/essay prompts | personal-reflective |
+| "tulevaisuus", "markkina", "ala", "X vs Y", "kannattaako", "strategia", named actors / companies / industries, "what should X do" | business/strategy |
+| Abstract concept without actors ("mitä on X", "oikeudenmukaisuus", "vapaus"), thought-experiment phrasing, conceptual analysis without applied stakes | philosophical |
+
+### Override triggers
+
+The user can force a category by adding a modifier to the standard trigger:
+
+- `"elevate this as essay"` / `"reflect on this"` → personal-reflective
+- `"elevate this as strategy"` or default `"elevate this"` → business/strategy
+- `"elevate this philosophically"` / `"philosophise this"` → philosophical
+
+When an override is present, it takes precedence over auto-detect.
+
+### Ambiguous cases
+
+If auto-detect cannot decide between two categories with reasonable confidence,
+default to **business/strategy** and announce the classification on the first line
+of the output, so the user can correct mid-turn:
+
+> *"Detected: business/strategy. Override with 'elevate this as essay' if wrong."*
+
+### If business is detected: ask about optional sections
+
+Business format has two optional elements (**Ideas to explore** with bolded **MVP**
+bullets — see `## Output: three context-aware formats`, Section 2a). These are
+opt-in. Before running the engine, ask the user:
+
+> *"Haluatko MVP-ehdotuksia ja/tai ideas-to-explore osaksi vastausta?"*
+
+Capture the answer. If yes, include Section 4 in the business format. If no,
+omit it. Do not ask this for personal-reflective or philosophical questions —
+those formats do not contain these sections.
 
 ---
 
@@ -173,77 +227,14 @@ Output) and name the reframe.
 
 ---
 
-## Output: the engineered synthesis
+## Output: three context-aware formats
 
-The deliverable always has the same shape, in every environment. Only surface
-formatting changes.
+The 5-move engine runs the same in all three formats. Only the output structure
+differs, based on the category detected in `## Step 0 — Classify the question`.
 
-The output is structured in this order:
-
-**0. Activation block (UX signal). MANDATORY — STREAM THIS FIRST.**
-Before any internal reasoning, emit a short three-line preamble. This streams
-immediately on invocation. Without it, the user stares at a thinking indicator
-for 1–2 minutes wondering if anything is happening — and the skill feels broken
-even when it is working.
-
-Format (exact — adapt only the topic line):
-
-```
-> 🧠 **Neurodivergent mode engaged.**
-> Reframing: *[the topic in one short phrase]*
-> Producing: reframe → load-bearing ideas → synthesis → buildable instances → transferable lever → plain-language summary. ~1–2 min.
-```
-
-Emit this **before** entering any extended internal reasoning. The block must
-appear in the visible output first; the engine runs afterwards. This is not
-optional and not negotiable — it is what makes the skill feel responsive instead
-of silently slow.
-
-This is **not** the worksheet anti-pattern. The worksheet exposes the engine's
-five moves as section headers. The activation block exposes only the
-deliverable's shape and the topic — no internal moves, no engine state — and
-exists purely to make the work visible while it is in progress.
-
-**1. The reframe, up front.**
-Open by stating the structural reframe clearly. The reader should know the new
-frame within the first short paragraph. Lead with it, then earn it.
-
-**2. The body — each load-bearing idea in its own section.**
-The reframe rests on a few load-bearing ideas, usually two to four. Each gets its
-own section, with a heading that names *the idea itself* — never a method move.
-
-- Banned heading: "Drift", "Cross-domain patterns", "Move 4". Method-machinery as
-  a heading is the worksheet failure.
-- Correct heading: "The interface disappears — it does not improve", "The
-  stripped-out social layer always returns".
-
-Each section fully opens its idea, in connected prose: **what the idea is** (stated
-precisely), **the mechanism** (why it is true, how it works), **the evidence** (the
-cross-domain pattern or concrete case, woven in — never listed as "Domain A /
-Domain B"), and **what follows** (the consequence).
-
-**3. The synthesis.**
-Show how the load-bearing ideas combine. State the implications concretely — who
-wins, who loses, what to do, what to watch.
-
-**4. The generative leap.**
-Do not stop at diagnosis. Given the reframe, produce conclusions and bold,
-well-justified ideas — including some that are unconventional. Each generative move
-must land on a **concrete, buildable instance**: not "legibility matters" but the
-specific thing someone could sketch tomorrow. Bold is allowed; ungrounded is not —
-every leap carries its justification.
-
-**5. The elevation.**
-Name the reframe a neurotypical pass would not have produced. Then show *how the
-problem was attacked*: the transferable move — typically, find what the whole field
-treats as obviously true and doubt exactly that. Make that move concrete with one
-short example from a different field, so the reader sees it is a portable lever,
-not a one-off.
-
-**6. The plain-language summary.**
-Close with a short, flat recap — no jargon — so a reader who lost the thread in the
-dense middle still leaves with the core: the reframe, the concrete moves, and the
-lever.
+After the format-specific output is complete, the entire output is handed off to
+`plain-english-skill` for final polish — see `## Handoff to plain-english-skill`
+below.
 
 ### Surface formatting by environment
 
@@ -251,6 +242,158 @@ lever.
   the output is a standalone, navigable artifact.
 - **Claude.ai (conversational):** bold idea-headings or clear section breaks, short
   paragraphs. Still fully structured — conversational does not mean unstructured.
+
+---
+
+### Format 2a — Business / product / strategy
+
+1. **Reframe up-front.** One short paragraph stating the new frame. Lead with
+   it, then earn it.
+
+2. **Body — load-bearing ideas.** The reframe rests on 2–4 load-bearing ideas.
+   Each gets its own section with a heading that names *the idea itself* (never
+   a method move). Open each section with a bolded one-sentence **core claim**,
+   then expand in prose: what the idea is, the mechanism, the evidence, the
+   consequence.
+
+   - Banned heading: "Drift", "Cross-domain patterns", "Move 4". Method-machinery
+     as a heading is the worksheet failure.
+   - Correct heading: "The interface disappears — it does not improve", "The
+     stripped-out social layer always returns".
+
+3. **Synthesis.** How the load-bearing ideas combine. State implications
+   concretely — who wins, who loses, what to do, what to watch.
+
+   **Use a table when the synthesis lists multiple players, scenarios, or
+   winners/losers.** A short framing sentence plus a table is sharper than a
+   six-sentence paragraph naming five players.
+
+4. **[Opt-in] Ideas to explore.** Generated *only if* the user said yes in
+   Step 0. Each idea must land on a **concrete, buildable thing** — not
+   "legibility matters" but the specific thing someone could sketch tomorrow.
+   Bold is allowed; ungrounded is not — every leap carries its justification.
+
+   **Pull the MVP out as a bolded bullet line at the end of each idea.** The
+   rest of the idea is prose — mechanism, strategic question, consequence —
+   but the **MVP** (*minimum viable product* — the smallest specific thing
+   buildable next quarter) gets its own line so the reader can scan what is
+   actually buildable.
+
+5. **Elevation.** Name the reframe a neurotypical pass would not have produced.
+   Then show *how the problem was attacked*: the transferable move — typically,
+   find what the whole field treats as obviously true and doubt exactly that.
+   Make that move concrete with one short example from a different field, so
+   the reader sees it is a portable lever, not a one-off.
+
+   **Close the section with the transferable lever stated as a quote block** —
+   one to two sentences, no qualifications. The lever is the most reusable
+   thing in the whole deliverable; it deserves the visual prominence of a
+   callout.
+
+6. **Plain-language summary.** **4–5 short bullets**, plain language, no jargon.
+   Each bullet covers one of: the reframe, the main shifts, the buildable
+   answer (if Section 4 was generated), the lever, what to watch.
+
+---
+
+### Format 2b — Personal-reflective / opinion
+
+The same engine runs. The output is essayistic — first-person voice (*minä*).
+The user is asking for a reflective answer (e.g., an application essay,
+opinion piece, blog post), not a strategic analysis.
+
+1. **Hook.** One concrete detail from the question that opens a path. No
+   preamble, no background, no thesis paragraph. The hook is what the
+   detail-first move surfaced.
+
+2. **Resonance.** What in the question resonates and from where it recognises.
+   Name the felt resonance precisely — what *exactly* the question touches,
+   not a vague "this matters to me".
+
+3. **Mechanism.** The structural reason for the resonance: a cross-domain
+   pattern, a social mechanism, a personal disposition. This is where the
+   engine's Move 3 (divergent wander) lands — the underlying structure that
+   explains why the question lands.
+
+4. **Demonstration.** A concrete vignette or example showing the mechanism
+   alive. This may be:
+   - A cross-domain analogy (biology, physics, history, software, markets)
+   - A historical example or public figure
+   - A fictional vignette / scenario
+   - A cultural reference
+
+   **MUST NOT fabricate the user's own personal stories.** If the user has
+   supplied their own material in the prompt, draw on that; otherwise use
+   external examples. The rule is real and load-bearing — fabricated
+   first-person anecdotes attributed to the user are a hard fail.
+
+5. **Forward look.** What this shifts in thinking. Not a recommendation, not
+   a buildable — a reorientation. Where this lands the writer next.
+
+**Excluded** (not produced in this format): MVP bullets, synthesis table, lever
+quote block, "ideas to explore".
+
+**Voice:** first-person essay (*minä* / "I"). Sentence rhythm is essayistic,
+not list-driven.
+
+---
+
+### Format 2c — Philosophical / conceptual
+
+The same engine runs. The output is analytical-essay shape: closer to a
+philosophy or long-form analysis piece than a strategy deliverable.
+
+1. **Reframe up-front.** One short paragraph stating the new frame. Same role
+   as in business format.
+
+2. **Arguments.** Load-bearing ideas (2–4), each in its own section with a
+   bolded one-sentence **core claim**, then prose. Same internal structure as
+   the business `Body` section, but the ideas are conceptual rather than
+   strategic.
+
+3. **Counterarguments.** The strongest case against own reframe, treated
+   seriously (no straw man). One section per major counter, each with a
+   bolded core claim and an opened response. This is the philosophical-format
+   discipline: a reframe is not credible unless it has met its real opposition.
+
+4. **Synthesis.** How arguments and counterarguments combine, what remains
+   open, what is *not* settled. Prose, no table — philosophical synthesis is
+   not a winners/losers comparison.
+
+5. **Implications.** What follows in thinking or action. Not a buildable; more
+   a reorientation of the conceptual landscape — what becomes a sharper
+   question now that the reframe stands.
+
+6. **Elevation.** Same role as in business: name the transferable move, give a
+   short cross-domain example, and **close with the lever stated as a quote
+   block**.
+
+7. **Plain-language summary.** **4–5 short bullets** covering reframe, main
+   shifts, lever, what stays open.
+
+**Excluded:** MVP bullets, synthesis table, "ideas to explore" as concrete
+buildables.
+
+**Voice:** analytical essay, third-person or impersonal. Not first-person.
+
+---
+
+## Handoff to plain-english-skill
+
+This skill's output is structured analysis. The final reader-facing polish is
+delegated to `plain-english-skill`
+(https://github.com/b1rdmania/claude-plain-english-skill).
+
+Once the format-specific output is generated, end with a single line:
+
+> *Output ready for plain-english-skill — invoke it on the full output above to remove AI-language patterns, tighten passives, and produce the final reader version.*
+
+Claude Code does not natively chain skills. The handoff line signals the next
+step to the orchestrator (Claude reading the output). The user or Claude then
+invokes `plain-english-skill` on the produced text.
+
+If `plain-english-skill` is not installed, the output is still useful as raw
+structured analysis — it simply has not been smoothed.
 
 ---
 
@@ -276,17 +419,41 @@ Remove either half and you get one of these.
 
 ### Self-check before responding
 
-- Did the activation block stream *first*, before any reasoning? → if not, the
-  user just stared at a thinking indicator. Always emit it first.
-- Is the reframe stated clearly in the opening? → if buried, move it up.
+**Category-specific checks** (run the ones that apply to the detected category):
+
+- **Step 0 ran?** Was the question classified before the engine started? → if not,
+  restart from Step 0.
+- **Format matches category?** Business format produced for a personal-reflective
+  question = restart formatting from the right section in `## Output`.
+- **Opt-in respected (business only)?** If user said *no* to MVPs / ideas-to-explore
+  in Step 0, Section 4 must be **absent**. If user said *yes*, it must be **present**
+  with a bolded **MVP** bullet at the end of each idea.
+- **No fabricated user stories (personal-reflective only)?** Demonstration is
+  cross-domain, historical, fictional, or cultural — **never** an invented
+  first-person anecdote attributed to the user.
+- **Counterargument section present (philosophical only)?** Not a straw man — a
+  real, strongest-form case against own reframe.
+- **Handoff line present?** Single quoted line at end pointing to plain-english-skill.
+
+**Universal checks** (every category):
+
+- Is the reframe (or the hook, in personal-reflective) stated clearly in the
+  opening? → if buried, move it up.
 - Does every section heading name an *idea*, not an engine move? → rename.
 - Is every load-bearing idea fully opened — what / mechanism / evidence /
   consequence? → open the thin ones.
+- Does each body / arguments section open with a bolded **core claim** line? → if
+  missing, add it (does not apply to personal-reflective sections).
 - Does the output read as a transcript of jumpy thinking? → re-engineer into
   structured synthesis.
-- Does each generative move land on something concrete and buildable? → make the
-  abstract ones concrete.
-- Does the elevation's lever come with a concrete cross-domain example? → add one.
+- For business format: does the synthesis use a **table** when listing multiple
+  players or winners/losers? → if a multi-player paragraph, convert it.
+- Does the elevation's lever (business / philosophical) come with a concrete
+  cross-domain example? → add one.
+- For business / philosophical: is the transferable lever stated as a `>` **quote
+  block** at the end of elevation? → wrap it.
+- For business / philosophical: is the plain-language summary in **4–5 bullets**
+  (not prose)? → bullet it.
 - Could a sharp reader say "this is just a smarter version of the obvious answer"?
   → restart from Move 1.
 
