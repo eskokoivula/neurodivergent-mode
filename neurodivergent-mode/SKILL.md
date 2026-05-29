@@ -43,21 +43,28 @@ assumes the question is on the table and reframes it. When in doubt, ask.
 
 ---
 
-## Step 0 — Open: classify, then pick a mode
+## Step 0 — Open: classify, then select a mode
 
-When the skill triggers, do these in order. The slow engine starts only *after*
-the user picks a mode, so the opening is instant.
+When the skill triggers, do these in order. Do not block on a user reply before running.
 
 1. **Classify silently.** Read the prompt, decide the category (business /
    personal-reflective / philosophical) using the signals below. Do not narrate
    this — it is cheap.
-2. **Ask one message — the mode pick.** Offer the two modes (ADHD recommended for
-   speed). If the category is business, fold the MVP opt-in into the *same*
-   message — one round-trip, not two. See "The opening question" below.
-3. **Trigger-word shortcut.** If the user already named a mode, skip the mode
-   question. `"adhd mode"` / `"fast"` → ADHD. `"full autist"` / `"deep"` → Full
-   autist. (For business with a mode word given, still ask the MVP opt-in.)
-4. **Run the engine in the chosen mode**, then produce the category's output format.
+2. **Select mode automatically.** Default to **ADHD mode**. Auto-select **Full autist**
+   if any of these apply: the prompt is long or multi-layered, the category is
+   philosophical, or the user has used "deep", "thorough", "full", or "go wide".
+3. **Trigger-word shortcut.** If the user already named a mode, use it directly.
+   `"adhd mode"` / `"fast"` → ADHD. `"full autist"` / `"deep"` → Full autist.
+4. **Announce and run.** Open the response with one line stating the mode and
+   category selected, then run the engine immediately. The user can override mid-turn
+   — if they do, rerun from the engine step, not from scratch.
+
+   > *"Running ADHD mode — business/strategy. Say 'full autist' or 'go deep' to switch."*
+
+5. **MVP opt-in (business only).** For business questions, include a one-line
+   prompt at the top of the output asking whether to include MVP suggestions.
+   Do not wait for the answer before delivering the main analysis — append a
+   short note at the end: *"Want MVP / ideas-to-explore added? Say yes and I'll append."*
 
 ### The two modes
 
@@ -78,16 +85,6 @@ ADHD mode trades a little breadth for speed: it may miss the occasional far
 analogy a wide search would find. Full autist is the full depth, no compromise.
 **Neither changes** the reframe logic, the categories, the output structures, or
 the polish standards.
-
-### The opening question
-
-Ask in one short message, then stop and wait for the answer. Two shapes:
-
-- **Non-business:** *"ADHD mode (nopeampi) vai Full autist (laajempi, syvempi)? — ADHD riittää useimmiten."*
-- **Business:** combine with the MVP opt-in: *"Kaksi valintaa: (1) ADHD mode (nopeampi) vai Full autist (laajempi)? (2) Haluatko MVP-ehdotuksia / ideas-to-explore mukaan?"*
-
-When a mode trigger word is already present, skip straight to running (ask only
-the MVP opt-in if business).
 
 ### Auto-detect signals
 
