@@ -83,8 +83,8 @@ the polish standards.
 
 Ask in one short message, then stop and wait for the answer. Two shapes:
 
-- **Non-business:** *"ADHD mode (nopeampi) vai Full autist (laajempi, syvempi)? — ADHD riittää useimmiten."*
-- **Business:** combine with the MVP opt-in: *"Kaksi valintaa: (1) ADHD mode (nopeampi) vai Full autist (laajempi)? (2) Haluatko MVP-ehdotuksia / ideas-to-explore mukaan?"*
+- **Non-business:** *"ADHD mode (faster, leaner) or Full autist (broader, deeper)? — ADHD is fine for most things."*
+- **Business:** combine with the MVP opt-in: *"Two choices: (1) ADHD mode (faster) or Full autist (broader)? (2) Do you want MVP suggestions / ideas-to-explore included?"*
 
 When a mode trigger word is already present, skip straight to running (ask only
 the MVP opt-in if business).
@@ -95,9 +95,9 @@ Read the prompt for these patterns:
 
 | Signal in the prompt | Category |
 |---|---|
-| Second-person addressing of the user ("you / sinä"), "miksi sinusta", "why does X resonate with you", opinion request, application/essay prompts | personal-reflective |
-| "tulevaisuus", "markkina", "ala", "X vs Y", "kannattaako", "strategia", named actors / companies / industries, "what should X do" | business/strategy |
-| Abstract concept without actors ("mitä on X", "oikeudenmukaisuus", "vapaus"), thought-experiment phrasing, conceptual analysis without applied stakes | philosophical |
+| Second-person addressing of the user ("you"), "why does X resonate with you", opinion request, application/essay prompts, "what do you think about", "how do you feel about" | personal-reflective |
+| "market", "industry", "X vs Y", "should I / should we", "strategy", named actors / companies / industries, "what should X do", "is it worth", "opportunity", "competitors" | business/strategy |
+| Abstract concept without actors ("what is X", "justice", "freedom", "consciousness"), thought-experiment phrasing, conceptual analysis without applied stakes | philosophical |
 
 ### Override triggers
 
@@ -260,10 +260,9 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
    numbered bullet points** — not a prose sentence. The MVP is the most
    scan-critical part of the deliverable; visual structure beats prose.
 
-   Format per idea:
+   Format per idea (render this structure directly — do not wrap in a code block):
 
-   ```
-   ## Idea A: [short name]
+   **Idea A: [short name]**
 
    [2-3 prose sentences: what it is, mechanism, strategic question.]
 
@@ -273,7 +272,6 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
    3. [next]
    4. [stack / dependency]
    5. [build time estimate]
-   ```
 
    Numbered bullets, not dashes. Each bullet ≤ 12 words. The reader scans the
    MVP block in 5 seconds; if it takes longer, the bullets are too long.
