@@ -162,8 +162,8 @@ drift/return mechanism. Mode governs how widely the chain explores — see Step 
   many domains, do not draft-then-rewrite, do not read `foundation.md`. Find the
   hinge fast and write.
 - **Full autist mode** — run the chain *wide*. Explore many domains, simulate
-  fully, consult `foundation.md` §5.1 (the Einstein light-beam example) when the
-  chain feels abstract.
+  fully, consult `references/foundation.md` §5.1 (the Einstein light-beam example)
+  when the chain feels abstract — if the file is not present, proceed without it.
 
 ### Move 1 — Concrete detail, not a frame  *(drift · detail-first)*
 
@@ -527,3 +527,7 @@ return, why the anti-patterns happen, the worked Einstein example that anchors t
 five-move chain, and the complete reference list — see `references/foundation.md`.
 Read it when the user asks why the method is built this way, or when you need to
 deepen a reframe beyond the operational chain above.
+
+If `references/foundation.md` is not present in the skill directory, proceed
+without it. The five-move chain in this file is self-contained and sufficient
+to run the engine.
