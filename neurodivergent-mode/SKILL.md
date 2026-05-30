@@ -153,9 +153,10 @@ opened. Do the jumpy work in your head; deliver the structured synthesis.
 
 ## The engine: the five-move chain
 
-Five moves: 1–3 are drift, 4–5 are return.
+Five moves: 1–3 are drift, 4–5 are return. See `## The core principle` above for the
+drift/return mechanism. Mode governs how widely the chain explores — see Step 0.
 
-**Mode governs depth here (see Step 0a):**
+**Mode governs depth here:**
 - **ADHD mode** — run the chain *tight*. One decisive anomaly, 1–2 cross-domain
   patterns, one principle. Keep internal reasoning economical: do not enumerate
   many domains, do not draft-then-rewrite, do not read `foundation.md`. Find the
@@ -467,8 +468,7 @@ what lets you catch it.
    drifted, found something genuinely good, and stopped — return began but never
    finished. The insight is real but the reader cannot act on it.
 
-All three are the same lesson: the engine is drift *and* return, both complete.
-Remove either half and you get one of these.
+All three fail the same way: one half of the engine ran without the other. See `## The core principle` for why both halves are mandatory.
 
 ### Self-check before responding
 
