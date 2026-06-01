@@ -72,6 +72,7 @@ differ only in *how widely the engine explores* and *how the output is written*.
 | Writing | Single pass — written already polished | Produce, then polish |
 | Load-bearing ideas | 2 | 3–4 |
 | Self-check | Slim (key checks only) | Full |
+| Selection pass | One quick self-refutation | Full adversarial pass |
 | Feel | Tighter, faster | Richer, slower |
 
 ADHD mode trades a little breadth for speed: it may miss the occasional far
@@ -212,6 +213,73 @@ the principle that must be true once it is gone. Then name the reframe.
 
 ---
 
+## The selection layer
+
+A reframe is a hypothesis. The engine generates it; this layer tests whether it
+holds, and ships only what survives. "Doubt the frame, trust the anomaly" is also
+how every crank thinks; what divides a real reframe from a confident wrong one is
+survival under attack.
+
+Two separations, both required. **In time:** generate the whole reframe first,
+judge second, never during — a generator that anticipates the critic produces safe,
+obvious work, the failure this skill exists to avoid. (That is drift-then-return,
+see `## The core principle`, one step further.) **In mind:** the critic is a
+different mind, not the same model grading itself, which shares its own blind spots.
+Where the environment can spawn agents, run the critic as a separate agent blind to
+the engine's reasoning; in plain chat, the same model runs it as a strict separate
+pass. Either way it is a pass after the engine, not Move 4–5.
+
+### What a kill needs
+
+**Attack the road, not the destination.** Weirdness lives in the conclusion;
+falseness lives in a step. Test the steps, never the conclusion's strangeness.
+
+- **Kill for:** a false fact, a broken inference, a smuggled premise, a claim that
+  forbids nothing (true but empty). A confident universal like "X always wins" dies
+  to one counterexample; boldness never shields a false step.
+- **Never kill for:** unconventional, bold, no precedent, uncomfortable, not yet
+  easy to defend. That is the signal, not the fault.
+
+A kill must be grounded, and the ground sets its power:
+
+1. **Logic** — a contradiction is false in any paradigm. Always allowed.
+2. **A real test you run** — a calculation, a primary source, a named
+   counterexample. Allowed when available.
+3. **Consensus (your training)** — never a kill, only a flag: *you disagree with
+   everyone; wrong, or ahead?* Every paradigm shift was false by its era's
+   consensus, and the skill exists to beat consensus, so consensus cannot judge it.
+
+Kill only on 1 or 2. A kill is a load-bearing claim: source it, never assert it
+from memory (`## Citations and research`). Where nothing grounds it, do not kill —
+label it a bold bet and name the test that would settle it.
+
+### How to verify, and what counts as a source
+
+Match the act to the claim: a number, run it; a fact, find a primary source or a
+specific counterexample and read it; an inference, check it follows. Use whatever
+search, fetch, and compute the environment gives. A solid source is primary over
+secondary, traceable (author, date, method), independently corroborated, and not
+written by whoever benefits. The catch: search is consensus-weighted, so a result
+that hands you a specific falsifying fact may kill, while one that only shows "most
+pages disagree" is consensus in a lab coat. Flag it, never kill.
+
+### Label, mode, format
+
+- **Label, never hide.** The user always sees the reframe, the strongest objection,
+  and a mark: **tested** (what would falsify it, plus the cheapest test) or **bold
+  bet** (kept, not yet proven). A reframe killed for being wrong is named with its
+  reason, never dropped in silence.
+- **By mode.** ADHD: the same model, one quick self-refutation on logic, label the
+  rest a bet, no search, no separate agent — fast. Full autist: spawn a separate
+  blind critic agent where the environment allows (else a full same-model pass), and
+  run the verification above.
+- **By format.** Business: the full layer, folded into Synthesis and Summary, no new
+  heading. Philosophical: the **Counterarguments** section already is this layer.
+  Personal-reflective: no gate; the critic never judges a feeling, and checks only
+  whether the text invented a fact about the writer.
+
+---
+
 ## Output: three context-aware formats
 
 The 5-move engine runs the same in all three formats. Only the output structure
@@ -292,6 +360,9 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
    Each bullet covers one of: the reframe, the main shifts, the buildable
    answer (if Section 4 was generated), the lever, what to watch.
 
+This format runs the full selection layer on the finished reframe — see
+`## The selection layer`.
+
 ---
 
 ### Format 2b — Personal-reflective / opinion
@@ -329,7 +400,9 @@ opinion piece, blog post), not a strategic analysis.
    a buildable — a reorientation. Where this lands the writer next.
 
 **Excluded** (not produced in this format): MVP bullets, synthesis table, lever
-quote block, "ideas to explore".
+quote block, "ideas to explore", falsifiability gate. You do not refute a personal
+reflection; keep only the no-fabrication honesty check above (see
+`## The selection layer`).
 
 **Voice:** first-person essay (*minä* / "I"). Sentence rhythm is essayistic,
 not list-driven.
@@ -353,6 +426,8 @@ philosophy or long-form analysis piece than a strategy deliverable.
    seriously (no straw man). One section per major counter, each with a
    bolded core claim and an opened response. This is the philosophical-format
    discipline: a reframe is not credible unless it has met its real opposition.
+   This section is the format's selection layer (see `## The selection layer`):
+   attack the reframe's truth, not its daring.
 
 4. **Synthesis.** How arguments and counterarguments combine, what remains
    open, what is *not* settled. Prose, no table — philosophical synthesis is
@@ -451,10 +526,12 @@ to remove the second skill-activation cost.)
 
 ---
 
-## The three banned anti-patterns
+## The banned anti-patterns
 
-Each is a specific failure of deliberate mind-wandering. Naming the mechanism is
-what lets you catch it.
+Each is a specific failure of deliberate mind-wandering, or of the selection that
+follows it. Naming the mechanism is what lets you catch it.
+
+### Of the engine — drift and return
 
 1. **The worksheet.** Drift suppressed. The method's moves become visible headings
    and labelled mini-lists ("Detail:", "Analogy:", "Move 4:"). The form eats the
@@ -470,6 +547,21 @@ what lets you catch it.
 
 All three fail the same way: one half of the engine ran without the other. See `## The core principle` for why both halves are mandatory.
 
+### Of the selection layer
+
+4. **The conformity filter.** The critic killed an idea for being weird, not
+   wrong. The most dangerous failure of selection: it leaves only the consensus
+   the skill exists to escape.
+
+5. **The pre-censored generator.** The generator softened its ideas anticipating
+   the critic. Generation lost its nerve before it began.
+
+6. **The lossy kill.** A refuted idea was dropped in silence instead of named with
+   its reason. Selection that hides its kills cannot be checked.
+
+All three fail the same way: selection ran inside generation, or ran without
+calibration. See `## The selection layer` for the rule that prevents both.
+
 ### Self-check before responding
 
 **ADHD mode — slim check (these five only, fast):**
@@ -477,7 +569,7 @@ All three fail the same way: one half of the engine ran without the other. See `
 2. Opt-in respected? (Business+yes → Section 4 with numbered MVP bullets; business+no → absent.)
 3. Personal-reflective Demonstration is cross-domain / historical / fictional — never a fabricated user anecdote.
 4. Polished as written, no meta-commentary leaked, user sees no raw intermediate.
-5. Not just a "smarter version of the obvious answer"? → if it is, restart from Move 1.
+5. Not just a "smarter version of the obvious answer" (restart from Move 1 if it is)? And it survived one honest objection, killed for wrong and not for weird?
 
 **Full autist mode — full check (the slim five, plus):**
 - Philosophical: counterargument section is real (strongest-form), not a straw man.
@@ -488,6 +580,8 @@ All three fail the same way: one half of the engine ran without the other. See `
 - Business synthesis uses **table** when multi-player?
 - Business/philosophical elevation: lever as `>` quote block + cross-domain example?
 - Business/philosophical summary: 4–5 bullets, not prose?
+- Selection ran after generation (not during), calibrated (killed for wrong, not weird), kills named not hidden?
+- Every kill grounded in logic or a real test it ran, never in consensus alone?
 
 ---
 
