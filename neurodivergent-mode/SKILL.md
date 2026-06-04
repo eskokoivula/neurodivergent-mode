@@ -267,16 +267,22 @@ pages disagree" is consensus in a lab coat. Flag it, never kill.
 
 - **Label, never hide.** The user always sees the reframe, the strongest objection,
   and a mark: **tested** (what would falsify it, plus the cheapest test) or **bold
-  bet** (kept, not yet proven). A reframe killed for being wrong is named with its
+  bet** (kept, not yet proven). For business and philosophical formats they also
+  always see the per-claim verdicts with their sources, as a required Verdict block
+  (never folded into prose). A reframe killed for being wrong is named with its
   reason, never dropped in silence.
 - **By mode.** ADHD: the same model, one quick self-refutation on logic, label the
   rest a bet, no search, no separate agent — fast. Full autist: spawn a separate
   blind critic agent where the environment allows (else a full same-model pass), and
   run the verification above.
-- **By format.** Business: the full layer, folded into Synthesis and Summary, no new
-  heading. Philosophical: the **Counterarguments** section already is this layer.
-  Personal-reflective: no gate; the critic never judges a feeling, and checks only
-  whether the text invented a fact about the writer.
+- **By format.** Business and philosophical: end with a **required Verdict block**
+  (claim → verdict → source, the strongest objection, and the tested/bold-bet mark)
+  — always visible, never folded away. See Format 2a §7. Philosophical also keeps
+  its **Counterarguments** section, which attacks the reframe's *truth* in prose;
+  the Verdict block adds the factual sourcing. Personal-reflective: no gate and no
+  Verdict block; the critic never judges a feeling, and the output carries only a
+  one-line honesty note (no invented facts about the writer; a source for any
+  external fact cited).
 
 ---
 
@@ -360,8 +366,23 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
    Each bullet covers one of: the reframe, the main shifts, the buildable
    answer (if Section 4 was generated), the lever, what to watch.
 
-This format runs the full selection layer on the finished reframe — see
-`## The selection layer`.
+7. **Verdict & sources** (required, always present). The selection layer's output,
+   shown rather than folded away. Place it last, under its own heading, as the
+   deliverable's audit trail.
+
+   - **Strongest objection.** One short paragraph: the best refutation or limit the
+     critic found, and what changed in the reframe because of it.
+   - **Verdict table.** One row per load-bearing factual claim: *claim → verdict
+     (verified / partly / false / unverified) → source*.
+   - **Reframe mark.** The overall reframe labelled **tested** (name the falsifier
+     and the cheapest test) or **bold bet** (kept, not yet proven).
+   - **By mode.** Full autist: full table with a source per row (a separate blind
+     critic ran real verification). ADHD: no sourced table — no search ran — so give
+     the strongest objection, the tested/bold-bet marks, and one line: *"ADHD mode:
+     logic check only, no web verification."*
+
+This format runs the full selection layer on the finished reframe and always ends
+with the Verdict block above — see `## The selection layer`.
 
 ---
 
@@ -400,9 +421,14 @@ opinion piece, blog post), not a strategic analysis.
    a buildable — a reorientation. Where this lands the writer next.
 
 **Excluded** (not produced in this format): MVP bullets, synthesis table, lever
-quote block, "ideas to explore", falsifiability gate. You do not refute a personal
-reflection; keep only the no-fabrication honesty check above (see
+quote block, "ideas to explore", falsifiability gate, Verdict block. You do not
+refute a personal reflection; keep only the no-fabrication honesty check above (see
 `## The selection layer`).
+
+**Honesty note (the only selection output here).** Close with one short line, not a
+table or a heading: confirm no facts about the writer were invented, and cite a
+source for any external fact used in the Demonstration. No verdict table, no
+tested/bold-bet mark — a personal reflection is not refuted.
 
 **Voice:** first-person essay (*minä* / "I"). Sentence rhythm is essayistic,
 not list-driven.
@@ -443,6 +469,12 @@ philosophy or long-form analysis piece than a strategy deliverable.
 
 7. **Plain-language summary.** **4–5 short bullets** covering reframe, main
    shifts, lever, what stays open.
+
+8. **Verdict & sources** (required, always present). The same block as business
+   Format 2a §7: the strongest objection, the verdict table (*claim → verdict →
+   source*), and the tested/bold-bet mark. It is separate from §3 Counterarguments:
+   Counterarguments attack the reframe's *truth* in prose; the Verdict block shows
+   the *factual sourcing* and the labels. Both appear.
 
 **Excluded:** MVP bullets, synthesis table, "ideas to explore" as concrete
 buildables.
@@ -564,14 +596,15 @@ calibration. See `## The selection layer` for the rule that prevents both.
 
 ### Self-check before responding
 
-**ADHD mode — slim check (these five only, fast):**
+**ADHD mode — slim check (fast):**
 1. Mode picked before the engine ran? Format matches category?
 2. Opt-in respected? (Business+yes → Section 4 with numbered MVP bullets; business+no → absent.)
 3. Personal-reflective Demonstration is cross-domain / historical / fictional — never a fabricated user anecdote.
 4. Polished as written, no meta-commentary leaked, user sees no raw intermediate.
 5. Not just a "smarter version of the obvious answer" (restart from Move 1 if it is)? And it survived one honest objection, killed for wrong and not for weird?
+6. Business/philosophical: Verdict block present at the end (strongest objection + tested/bold-bet marks; "logic check only, no web verification")? Personal-reflective: one-line honesty note present?
 
-**Full autist mode — full check (the slim five, plus):**
+**Full autist mode — full check (the slim checks, plus):**
 - Philosophical: counterargument section is real (strongest-form), not a straw man.
 - Reframe (or hook) clear in opening?
 - Section headings name *ideas*, not engine moves?
@@ -582,6 +615,7 @@ calibration. See `## The selection layer` for the rule that prevents both.
 - Business/philosophical summary: 4–5 bullets, not prose?
 - Selection ran after generation (not during), calibrated (killed for wrong, not weird), kills named not hidden?
 - Every kill grounded in logic or a real test it ran, never in consensus alone?
+- Business/philosophical: **Verdict block** present and visible at the end (strongest objection, verdict table with sources, tested/bold-bet mark)? Personal-reflective: one-line honesty note present?
 
 ---
 
