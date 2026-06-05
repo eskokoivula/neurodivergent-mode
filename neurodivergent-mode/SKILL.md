@@ -128,6 +128,24 @@ If the user says yes, include Section 4. If no, omit it. Never ask this for
 personal-reflective or philosophical questions — those formats have no such
 section.
 
+### Selection path — which critic runs
+
+After the mode is picked, the reframe is still tested before you ship it (see
+`## The selection layer`). Mode, environment, and category fix which form that test
+takes:
+
+- **Full autist + business/philosophical + Workflow tool (Claude Code)** → the
+  multi-agent **arena** (`## The arena`): read `references/arena.js`, pass it to the
+  Workflow tool as `script` with `args = {question, format, isElevation,
+  priorOutput, includeMvps}`.
+- **Full autist + no Workflow tool** (plain chat / Claude.ai) → one separate blind
+  critic / same-model pass (the current behaviour).
+- **ADHD mode** → no arena: one quick self-refutation on logic, no search.
+- **Personal-reflective** (either mode) → bypasses the arena and the falsifiability
+  gate entirely: a single-pass Format 2b essay plus the one-line honesty note.
+
+Nothing breaks where the Workflow tool is absent.
+
 ---
 
 ## The core principle: drift, then return
@@ -272,9 +290,11 @@ pages disagree" is consensus in a lab coat. Flag it, never kill.
   (never folded into prose). A reframe killed for being wrong is named with its
   reason, never dropped in silence.
 - **By mode.** ADHD: the same model, one quick self-refutation on logic, label the
-  rest a bet, no search, no separate agent — fast. Full autist: spawn a separate
-  blind critic agent where the environment allows (else a full same-model pass), and
-  run the verification above.
+  rest a bet, no search, no separate agent — fast. Full autist: where the Workflow
+  tool exists (Claude Code), run the multi-agent arena (`## The arena`) — parallel
+  generators, a blind critic per reframe, a judge; else spawn a single separate blind
+  critic agent where the environment allows (else a full same-model pass), and run the
+  verification above.
 - **By format.** Business and philosophical: end with a **required Verdict block**
   (claim → verdict → source, the strongest objection, and the tested/bold-bet mark)
   — always visible, never folded away. See Format 2a §7. Philosophical also keeps
@@ -283,6 +303,54 @@ pages disagree" is consensus in a lab coat. Flag it, never kill.
   Verdict block; the critic never judges a feeling, and the output carries only a
   one-line honesty note (no invented facts about the writer; a source for any
   external fact cited).
+
+---
+
+## The arena: the selection layer as parallel agents
+
+In Claude Code, Full autist mode runs the selection layer as a **multi-agent
+arena** rather than a single critic. Same discipline as `## The selection layer`,
+externalised: several reframes generated in parallel, each one killed-or-kept by
+its own blind critic, then a judge that ranks and presents the survivors. About
+seven agents, all Opus, written as a Workflow script in `references/arena.js`.
+
+**When it runs.** Full autist mode, the Workflow tool available, business or
+philosophical category — the full ladder is in `## Step 0 → Selection path`. A
+skill instructing the Workflow tool is a valid opt-in for that tool, so the run is
+automatic, no extra prompt. To run it, read `references/arena.js` and pass its
+contents as the Workflow tool's `script` with `args = {question, format,
+isElevation, priorOutput, includeMvps}`.
+
+**Three generators, one per drift direction.** `references/foundation.md` has
+exactly three real drift directions — detail-first (§2.1), divergent (§2.2),
+social (§2.3). "Global" (§2.4) is the return-side switch, not a drift axis, so it
+is not a generator. Each generator is forced down one direction as a hard
+divergence constraint, so the three reframes diverge by construction instead of
+restating one answer.
+
+**Critics hold the kill authority, not the judge.** Each reframe gets one blind
+critic that never saw how it was made — it is not even told which drift direction
+produced it. The critic carries the exact calibration from `## The selection
+layer`: attack the road not the destination, kill only on logic or a real test,
+consensus can only flag. A reframe dies only on a sourced logic or fact error.
+
+**The judge presents, it does not decide.** The judge ranks survivors on merit,
+writes the lead reframe in full Format 2a or 2c (including the required Verdict
+block, transcribed from the lead critic's checks), and lists every other reframe —
+survivors and killed — with reasons ("label, don't delete"). It may not kill, and
+it may not flatten a weird-but-right survivor toward the safe one. That flattening
+is anti-pattern 4, "the conformity filter"; stopping it is the whole reason the
+judge is a presenter, not a decider. The human is the final judge.
+
+**Pipeline, not lock-step.** Generate→critique runs per lane independently — a fast
+lane is critiqued while a slow one still generates — and the judge runs once, after
+all lanes resolve. If every reframe is killed, the arena returns `{status:
+"all_killed"}` with the kill reasons and invents no winner; the skill then runs the
+single-pass fallback and surfaces why each died.
+
+**Output.** One clean deliverable: the lead reframe in full, then `## Other
+reframes considered`. Never the raw structured JSON. See `## Output` for the
+formats.
 
 ---
 

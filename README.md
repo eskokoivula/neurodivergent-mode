@@ -88,6 +88,8 @@ The rule is deliberately narrow: kill a reframe only for a broken step — a fal
 
 In Claude Code the critic runs as a *separate* agent, blind to how the reframe was built, so the judge doesn't inherit the generator's blind spots. Business and philosophical answers then end with a visible **Verdict** block: the strongest objection, each load-bearing claim checked against a source, and the reframe marked *tested* or *bold bet* — kept, but not yet proven.
 
+In **Full autist mode**, Claude Code takes this further into a parallel **arena**: three generators, each forced down a different reasoning direction, produce three genuinely different reframes; a separate blind critic tries to kill each one; and a judge ranks the survivors and presents them — forbidden from flattening a weird-but-right reframe into the safe one. You see the lead reframe in full, then every other reframe considered, including the killed ones and why they died. Where the Workflow tool isn't available (plain chat), it falls back to the single-critic pass above.
+
 ---
 
 ## Plain English, built in
