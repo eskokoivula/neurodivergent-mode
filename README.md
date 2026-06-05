@@ -80,6 +80,16 @@ To force a format, say `reflect on this` (personal essay), `elevate this philoso
 
 ---
 
+## It argues with itself before you see it
+
+A bold reframe and a confident wrong one look the same on the page. So the skill doesn't just generate — it runs every reframe through an adversarial **selection layer** before shipping it.
+
+The rule is deliberately narrow: kill a reframe only for a broken step — a false fact, a bad inference — never for being *weird*. Weird-but-right is the whole point. Consensus ("everyone disagrees") can flag a claim but never kill it; every paradigm shift was wrong by the consensus of its day.
+
+In Claude Code the critic runs as a *separate* agent, blind to how the reframe was built, so the judge doesn't inherit the generator's blind spots. Business and philosophical answers then end with a visible **Verdict** block: the strongest objection, each load-bearing claim checked against a source, and the reframe marked *tested* or *bold bet* — kept, but not yet proven.
+
+---
+
 ## Plain English, built in
 
 Every output is cleaned before you see it: AI tics stripped, em-dashes cut to budget, passive voice activated, padding removed. The rules are adapted from [Birdmania's plain-english-skill](https://github.com/b1rdmania/claude-plain-english-skill) and run *inside* this skill — nothing extra to install. The structured analysis stays internal; you get the clean prose. Ask for "the raw output" if you ever want the pre-polish version.
@@ -100,8 +110,8 @@ Both run the same engine — only the input differs.
 ### Claude Code
 
 ```bash
-git clone https://github.com/eskokoivula/autist-mode.git
-cp -r autist-mode/neurodivergent-mode ~/.claude/skills/
+git clone https://github.com/eskokoivula/neurodivergent-mode.git
+cp -r neurodivergent-mode/neurodivergent-mode ~/.claude/skills/
 ```
 
 Restart Claude Code, or run `claude -c` to continue your current session with the skill loaded. The skill auto-loads when triggered.

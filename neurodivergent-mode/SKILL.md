@@ -68,7 +68,7 @@ differ only in *how widely the engine explores* and *how the output is written*.
 |---|---|---|
 | Engine breadth | One decisive anomaly; 1–2 cross-domain patterns max | Wide wandering; many domains explored |
 | Move 2 simulation | Minimal — just enough to find the hinge | Full, multiple runs |
-| `foundation.md` | Not read | May consult to deepen |
+| `references/foundation.md` | Not read | May consult to deepen |
 | Writing | Single pass — written already polished | Produce, then polish |
 | Load-bearing ideas | 2 | 3–4 |
 | Self-check | Slim (key checks only) | Full |
@@ -160,10 +160,10 @@ drift/return mechanism. Mode governs how widely the chain explores — see Step 
 **Mode governs depth here:**
 - **ADHD mode** — run the chain *tight*. One decisive anomaly, 1–2 cross-domain
   patterns, one principle. Keep internal reasoning economical: do not enumerate
-  many domains, do not draft-then-rewrite, do not read `foundation.md`. Find the
+  many domains, do not draft-then-rewrite, do not read `references/foundation.md`. Find the
   hinge fast and write.
 - **Full autist mode** — run the chain *wide*. Explore many domains, simulate
-  fully, consult `references/foundation.md` §5.1 (the Einstein light-beam example)
+  fully, consult `references/foundation.md` §6.1 (the Einstein light-beam example)
   when the chain feels abstract — if the file is not present, proceed without it.
 
 ### Move 1 — Concrete detail, not a frame  *(drift · detail-first)*
@@ -207,7 +207,7 @@ the principle that must be true once it is gone. Then name the reframe.
 
 - **Social reasoning runs throughout.** When people are involved, hold several
   interpretations side by side. Treat a breakdown between groups as *mutual*
-  mismatch, not one group's deficiency. (See `foundation.md` §2.3.)
+  mismatch, not one group's deficiency. (See `references/foundation.md` §2.3.)
 - **Do not skip moves.** Full chain discipline is what prevents the
   "smarter version of the obvious answer" failure.
 
@@ -388,7 +388,7 @@ with the Verdict block above — see `## The selection layer`.
 
 ### Format 2b — Personal-reflective / opinion
 
-The same engine runs. The output is essayistic — first-person voice (*minä*).
+The same engine runs. The output is essayistic — first-person voice ("I").
 The user is asking for a reflective answer (e.g., an application essay,
 opinion piece, blog post), not a strategic analysis.
 
@@ -430,7 +430,7 @@ table or a heading: confirm no facts about the writer were invented, and cite a
 source for any external fact used in the Demonstration. No verdict table, no
 tested/bold-bet mark — a personal reflection is not refuted.
 
-**Voice:** first-person essay (*minä* / "I"). Sentence rhythm is essayistic,
+**Voice:** first-person essay ("I"). Sentence rhythm is essayistic,
 not list-driven.
 
 ---
@@ -642,7 +642,7 @@ Do not romanticise neurodivergence. Not "better thinking" — *different
 optimisation*: more detail salience, more internal simulation, more pattern-based
 association, less automatic acceptance of convention. Coexists with overload,
 communication friction, uneven attention. The research does not support a
-"superpower" story (see `foundation.md` §6).
+"superpower" story (see `references/foundation.md` §7).
 
 This skill imitates the cognitive *structure* for reasoning. It does not claim
 all neurodivergent people think this way, or that thinking this way makes anyone
@@ -651,8 +651,9 @@ neurodivergent.
 ## Foundation
 
 For the full theory — deliberate mind-wandering, the four drift directions, the
-return, why the anti-patterns happen, the worked Einstein example that anchors the
-five-move chain, and the complete reference list — see `references/foundation.md`.
+return, the selection layer, why the anti-patterns happen, the worked Einstein
+example that anchors the five-move chain, and the complete reference list — see
+`references/foundation.md`.
 Read it when the user asks why the method is built this way, or when you need to
 deepen a reframe beyond the operational chain above.
 

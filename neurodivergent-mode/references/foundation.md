@@ -168,13 +168,62 @@ figures below, and it has a clean conceptual basis in the philosophy of the thou
 experiment: turning a problem into a mental scene and examining it from the inside.
 (Footprint: Stanford Encyclopedia of Philosophy, "Thought Experiment.")
 
+The return described here runs *inside* the engine. The skill takes it one step
+further: it pulls the evaluation phase out of the engine and runs it as a separate
+adversarial pass — the selection layer, Section 4.
+
 ---
 
-## 4. Why the failure modes happen
+## 4. The selection layer — evaluation made separate
 
-`SKILL.md` bans three output anti-patterns. They are not arbitrary — each is a
-specific failure of deliberate mind-wandering, and naming the mechanism is what lets
-the skill recognise and avoid them.
+The engine in Sections 1–3 generates a reframe. A reframe is a hypothesis: it can
+be bold and right, or bold and wrong — and "doubt the frame, trust the anomaly" is
+also how every crank thinks. The selection layer is the part that tells them apart.
+It is the *evaluation phase* of the two-fold model (Section 1), pulled out and made
+adversarial, run as a deliberate pass *after* the engine rather than woven through
+it.
+
+Two separations carry the layer, and each has a reason.
+
+**Separate in time: generate first, judge second.** The two-fold model is *cyclic* —
+generation and evaluation alternate, they do not run at once (Footprint: Kleinmintz,
+Ivancovsky & Shamay-Tsoory 2019, Section 1). When evaluation runs *inside*
+generation, the valuation sub-stage rejects raw material before it is elaborated —
+and the first thing it rejects is the unfamiliar, because unfamiliar is what looks
+weak before it is built out. Holding judgment until the reframe is fully built is
+not politeness to the idea; it is what protects the novelty the skill exists to
+find. This is the project's core wager, one level down: *separation protects
+creativity.*
+
+**Separate in mind: a different evaluator, not the same one grading itself.** This
+is an engineering choice, not a research finding, and is marked as such. The
+reasoning: a self-critic re-applies its own frame, so it shares its own blind spots
+— and a skill built to escape default frames cannot make the frame-holder the
+judge. Where the environment can spawn a second agent, the critic runs as a
+separate mind blind to the engine's reasoning; in plain chat, the same model runs a
+strict separate pass. Either way the point is distance from the thing being judged.
+
+**What a kill may rest on — and the one thing it may not.** A reframe may be killed
+only on (1) logic — a contradiction is false in any paradigm — or (2) a real test
+the critic runs: a calculation, a primary source, a named counterexample. It may
+*not* be killed on (3) consensus. Consensus can only *flag*. The reason is
+structural: every paradigm shift was false by the consensus of its era, and this
+skill exists precisely to beat consensus, so consensus cannot be its judge without
+killing the thing it is meant to find. Consensus is a strong prior, never a verdict.
+(This is the same discipline the "Citations and research" section of `SKILL.md`
+applies to factual claims: a kill is load-bearing, so it must be sourced, not
+asserted from memory.)
+
+---
+
+## 5. Why the failure modes happen
+
+`SKILL.md` bans six anti-patterns, in two sets. The first three are failures of the
+engine — of deliberate mind-wandering itself. The second three are failures of the
+selection layer that follows it. None is arbitrary; each is a specific mechanism,
+and naming it is what lets the skill recognise and avoid it.
+
+**Of the engine — drift and return.**
 
 - **The worksheet.** Drift suppressed. The method's steps become visible headings and
   labelled lists; the form eats the content. This is what happens when return runs
@@ -186,12 +235,27 @@ the skill recognise and avoid them.
   found something genuinely good, and then stopped — return began but never finished.
   Valuation happened; monitoring and selection did not.
 
-All three are the same lesson: deliberate mind-wandering is drift *and* return, both
-complete. Remove either half and you get one of these.
+These three are the same lesson: deliberate mind-wandering is drift *and* return,
+both complete. Remove either half and you get one of them.
+
+**Of the selection layer — evaluation gone wrong.**
+
+- **The conformity filter.** The critic kills an idea for being weird, not wrong —
+  judging the destination's strangeness instead of testing the road. This is
+  consensus smuggled back in as a verdict, and it leaves exactly the obvious answer
+  the engine worked to escape.
+- **The pre-censored generator.** Separation in time fails: the generator softens
+  its ideas in anticipation of the critic, so evaluation has leaked into generation
+  and novelty is lost before the judge ever runs.
+- **The lossy kill.** A refuted idea is dropped in silence instead of named with its
+  reason. A critic that hides its kills cannot be told from a careless one.
+
+These three are the evaluation phase run wrong: judging too early, judging the wrong
+target, or judging without leaving a trace.
 
 ---
 
-## 5. Historical models — illustration, not foundation
+## 6. Historical models — illustration, not foundation
 
 Einstein, Tesla, Grandin, and da Vinci appear in this project as **illustrations** of
 internal-simulation thinking — not as its evidence base. The distinction matters and
@@ -199,7 +263,7 @@ is kept deliberately. This section opens one of them fully, because an abstract
 phrase like "he used thought experiments" teaches nothing — the *steps* are the
 point.
 
-### 5.1 Worked example: how Einstein's thinking reaches a result
+### 6.1 Worked example: how Einstein's thinking reaches a result
 
 Take the thought experiment Einstein is most associated with: imagining what it
 would be like to chase a beam of light and travel alongside it. Followed step by
@@ -244,7 +308,7 @@ This description is given in the project's own words. It does not put quotation
 marks around anything attributed to Einstein, because the skill does not invent or
 reconstruct quotations for real people.
 
-### 5.2 The others, briefly
+### 6.2 The others, briefly
 
 - **Tesla** described mentally building, adjusting, and testing inventions before
   construction, refining until he saw no fault — an imagine / simulate / detect-error
@@ -262,7 +326,7 @@ concrete. Keep them in that role.
 
 ---
 
-## 6. Important caution
+## 7. Important caution
 
 Do not turn neurodivergence into a single superpower story. The research does not
 support one, and this project explicitly refuses to imply one.
@@ -288,9 +352,9 @@ caricature.
 ## References
 
 The research below supports the *structure* of the method. It does not make the
-method "better thinking" — see Section 6. The list is here so that every claim in
-this document and in `SKILL.md` is traceable to its source; this is Section 7 of
-`SKILL.md` (citations and research) applied to the skill's own foundation.
+method "better thinking" — see Section 7. The list is here so that every claim in
+this document and in `SKILL.md` is traceable to its source; it applies the
+"Citations and research" section of `SKILL.md` to the skill's own foundation.
 
 Where author or detail corrections were found during sourcing, the corrected form
 is given here.
@@ -364,7 +428,7 @@ is given here.
     https://doi.org/10.1007/s10339-020-00992-6
     — Finding used: autistic creativity is on average below controls on standard
     measures (lower fluency/flexibility) but with higher detail and originality.
-    Used in Section 6 as a guard against the "superpower" framing.
+    Used in Section 7 as a guard against the "superpower" framing.
 
 11. Mercado, E., Chow, K., Church, B. A., & Lopata, C. (2020). Perceptual category
     learning in autism spectrum disorder: truth and consequences. *Neuroscience &
@@ -385,4 +449,4 @@ is given here.
   at all, only for framing, not as mechanism evidence.
 - Popular and company-blog articles on Einstein's thinking and on neurodivergent
   creativity — not peer-reviewed; not used as sources. The historical figures appear
-  as illustration only (Section 5).
+  as illustration only (Section 6).
