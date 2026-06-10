@@ -62,7 +62,7 @@ Before it runs, the skill offers a mode — like picking a model.
 - **ADHD mode** — faster and leaner. A tight engine: one decisive anomaly, one or two cross-domain patterns, written in a single pass. Use it when you want the reframe quickly.
 - **Full autist mode** — broader and deeper. Wide wandering across many domains, fuller internal simulation, richer output. Use it when you want maximum depth and don't mind waiting.
 
-Same engine, same output formats, same quality bar. The modes differ only in how widely the engine explores and how long it takes. Full autist is the original, unabridged behavior; ADHD trades a little breadth for speed.
+Same engine, same output formats. The modes differ in how widely the engine explores, how long it takes, and how hard the result is tested: Full autist runs real verification (a separate blind critic, web checks where available), while ADHD mode runs a quick logic check only — no web verification. Full autist is the original, unabridged behavior; ADHD trades breadth and verification depth for speed.
 
 Pick by answering the opening question, or skip it by naming the mode in your request: `adhd mode` / `fast`, or `full autist` / `deep`.
 
@@ -89,6 +89,8 @@ The rule is deliberately narrow: kill a reframe only for a broken step — a fal
 In Claude Code the critic runs as a *separate* agent, blind to how the reframe was built, so the judge doesn't inherit the generator's blind spots. Business and philosophical answers then end with a visible **Verdict** block: the strongest objection, each load-bearing claim checked against a source, and the reframe marked *tested* or *bold bet* — kept, but not yet proven.
 
 In **Full autist mode**, Claude Code takes this further into a parallel **arena**: three generators, each forced down a different reasoning direction, produce three genuinely different reframes; a separate blind critic tries to kill each one; and a judge ranks the survivors and presents them — forbidden from flattening a weird-but-right reframe into the safe one. You see the lead reframe in full, then every other reframe considered, including the killed ones and why they died. Where the Workflow tool isn't available (plain chat), it falls back to the single-critic pass above.
+
+A heads-up on cost: the arena is heavyweight — about seven agents, all running on Opus, and a single run can consume a few hundred thousand tokens. The single-critic fallback is far lighter.
 
 ---
 
