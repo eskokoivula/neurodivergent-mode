@@ -728,8 +728,8 @@ neurodivergent.
 
 ## Foundation
 
-For the full theory — deliberate mind-wandering, the four drift directions, the
-return, the selection layer, why the anti-patterns happen, the worked Einstein
+For the full theory — deliberate mind-wandering, the three drift directions, the
+return-side switch, the selection layer, why the anti-patterns happen, the worked Einstein
 example that anchors the five-move chain, and the complete reference list — see
 `references/foundation.md`.
 Read it when the user asks why the method is built this way, or when you need to

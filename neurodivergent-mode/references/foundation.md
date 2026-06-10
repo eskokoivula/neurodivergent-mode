@@ -55,10 +55,11 @@ evaluation must alternate. That is drift and return. The engine is built on it.
 
 ---
 
-## 2. The four drift directions
+## 2. The three drift directions — and the return-side switch
 
 Drift is not random. The mind wanders in specific directions, and each one is a
-documented feature of neurodivergent cognition. The skill uses four. Each is opened
+documented feature of neurodivergent cognition. The skill uses three, plus one
+deliberate switch that belongs to the return (Section 2.4). Each is opened
 below as an operation — what it does, not just what it is called.
 
 ### 2.1 Detail-first
