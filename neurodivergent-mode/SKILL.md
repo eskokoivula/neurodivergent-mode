@@ -319,7 +319,9 @@ philosophical category — the full ladder is in `## Step 0 → Selection path`.
 skill instructing the Workflow tool is a valid opt-in for that tool, so the run is
 automatic, no extra prompt. To run it, read `references/arena.js` and pass its
 contents as the Workflow tool's `script` with `args = {question, format,
-isElevation, priorOutput, includeMvps}`.
+isElevation, priorOutput, includeMvps}`. For an elevation pass, keep `priorOutput`
+compact — it is embedded into all three generator prompts, so a long prior
+analysis triples its own token cost; summarise it first if it is long.
 
 **Three generators, one per drift direction.** `references/foundation.md` has
 exactly three real drift directions — detail-first (§2.1), divergent (§2.2),
@@ -344,9 +346,17 @@ judge is a presenter, not a decider. The human is the final judge.
 
 **Pipeline, not lock-step.** Generate→critique runs per lane independently — a fast
 lane is critiqued while a slow one still generates — and the judge runs once, after
-all lanes resolve. If every reframe is killed, the arena returns `{status:
-"all_killed"}` with the kill reasons and invents no winner; the skill then runs the
-single-pass fallback and surfaces why each died.
+all lanes resolve. A lane whose critic never returns is carried as **unjudged**:
+presented and labeled, never silently dropped (a lost verdict is infrastructure,
+not a kill).
+
+**Exit statuses.** Normally the arena returns the finished markdown deliverable.
+Two structured exits instead: `{status: "no_survivors"}` — no reframe earned a
+critic's pass; it lists `killed` (with reasons) and `unjudged`, invents no winner,
+and the skill then runs the single-pass fallback and surfaces why each reframe
+died. `{status: "no_question"}` — `args.question` was empty, so no agents were
+spawned; re-invoke the Workflow tool with `args.question` bound (the input was
+broken, not the reframes — do not fall back).
 
 **Output.** One clean deliverable: the lead reframe in full, then `## Other
 reframes considered`. Never the raw structured JSON. See `## Output` for the

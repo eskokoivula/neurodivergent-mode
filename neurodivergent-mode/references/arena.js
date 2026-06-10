@@ -13,9 +13,10 @@
 // tool's `script`, with `args = {question, format, isElevation, priorOutput,
 // includeMvps}`. (A skill instructing the Workflow tool is a valid opt-in path for
 // that tool.) The Workflow tool returns either the finished markdown deliverable
-// (normal case) or a JSON string `{status:"all_killed", ...}` — see the bottom of
-// this script. On all_killed, the skill runs its single-pass fallback and surfaces
-// the kill reasons; it never invents a winner.
+// (normal case) or a JSON string — `{status:"no_survivors", killed:[], unjudged:[]}`
+// when no reframe earned a critic's pass, or `{status:"no_question"}` when
+// args.question was empty (no agents spawned). On no_survivors, the skill runs its
+// single-pass fallback and surfaces the kill reasons; it never invents a winner.
 
 export const meta = {
   name: "neurodivergent-arena",
@@ -189,7 +190,10 @@ const lanes = await pipeline(
       schema: REFRAME,
     }),
   async (reframe, dir) => {
-    if (!reframe) return null;
+    if (!reframe) {
+      log(dir.label + " returned nothing (generator unavailable) — lane lost before critique.");
+      return null;
+    }
     const verdict = await agent(criticPrompt(reframe, input), {
       label: "Critic — " + dir.id,
       phase: "critique",
@@ -201,20 +205,34 @@ const lanes = await pipeline(
 );
 
 const live = lanes.filter(Boolean);
-const survivors = live.filter((l) => l.verdict && l.verdict.survives === true);
-const dead = live.filter((l) => l.verdict && l.verdict.survives === false);
+// A null verdict means the critic never returned (agent error or user skip) — an
+// infrastructure failure, not a judgment. Those lanes are carried as "unjudged":
+// shown and labeled, never silently dropped (anti-pattern 6, the lossy kill,
+// applies to the pipeline too).
+const judged = live.filter((l) => l.verdict);
+const unjudged = live.filter((l) => !l.verdict);
+const survivors = judged.filter((l) => l.verdict.survives === true);
+const dead = judged.filter((l) => l.verdict.survives === false);
 
-log(survivors.length + " survived, " + dead.length + " killed, of " + live.length + " reframes critiqued.");
+log(
+  survivors.length + " survived, " + dead.length + " killed, " + unjudged.length +
+  " unjudged (critic unavailable), of " + live.length + " reframes generated."
+);
 
 if (survivors.length === 0) {
-  // Do NOT invent a winner. Hand structured data back; the skill runs its single-pass fallback.
+  // No reframe earned a critic's pass. Do NOT invent a winner. Hand structured
+  // data back; the skill runs its single-pass fallback and surfaces the reasons.
   return JSON.stringify(
     {
-      status: "all_killed",
-      killed: live.map((l) => ({
+      status: "no_survivors",
+      killed: dead.map((l) => ({
         frame: l.reframe.frame,
         killReason: l.verdict.killReason || null,
         strongestObjection: l.verdict.strongestObjection,
+      })),
+      unjudged: unjudged.map((l) => ({
+        frame: l.reframe.frame,
+        reason: "critic unavailable — no verdict was reached; not a kill",
       })),
     },
     null,
@@ -226,7 +244,7 @@ phase("judge");
 // The judge IS the writer, so it returns a STRING (the markdown deliverable), not a
 // schema'd object — a slot-filling schema would pressure uniform output, the very
 // flattening this design exists to prevent.
-return await agent(judgePrompt(survivors, dead, input), {
+return await agent(judgePrompt(survivors, dead, unjudged, input), {
   label: "Judge",
   phase: "judge",
   model: "opus",
@@ -238,17 +256,17 @@ return await agent(judgePrompt(survivors, dead, input), {
 // the method, the calibration, and the output format all travel in the prompt.
 // ---------------------------------------------------------------------------
 
-function generatorPrompt(dir, args) {
-  const elevation = args.isElevation
+function generatorPrompt(dir, input) {
+  const elevation = input.isElevation
     ? "\n\nThis is an ELEVATION pass. Here is the existing analysis to reframe — strip it to its concrete claims, find what it glossed over, then reframe:\n\n" +
-      (args.priorOutput || "(no prior output supplied)") +
+      (input.priorOutput || "(no prior output supplied)") +
       "\n"
     : "";
 
   return `You are one of three parallel reframe generators in an adversarial arena. Produce ONE structural reframe of the question below, using neurodivergent-style reasoning. A reframe sees the system behind the obvious answer — it is NOT a smarter version of the obvious answer.
 
 THE QUESTION:
-${args.question}${elevation}
+${input.question}${elevation}
 
 YOUR FORCED DRIFT DIRECTION — ${dir.label}.
 This is a HARD divergence constraint: diverge along THIS axis and no other. The other two generators are forced down different axes. If your reframe could equally have come from theirs, you have failed the constraint.
@@ -273,7 +291,7 @@ Do NOT soften, hedge, or pre-trim your reframe in anticipation of the critic. Th
 Return the structured object: the finished frame (one paragraph, stated and earned), 2–4 load-bearing claims (each marked fact / inference / interpretation, with why it matters), and a source for every factual claim.`;
 }
 
-function criticPrompt(reframe, args) {
+function criticPrompt(reframe, input) {
   const claims = reframe.loadBearingClaims
     .map((c, i) => `${i + 1}. [${c.type}] ${c.claim} — (why it matters: ${c.soWhat})`)
     .join("\n");
@@ -289,7 +307,7 @@ function criticPrompt(reframe, args) {
   return `You are a blind adversarial critic in a reframe arena. You did NOT generate the reframe below and you cannot see how it was made or which reasoning direction produced it. Judge ONLY what is in front of you.
 
 THE ORIGINAL QUESTION:
-${args.question}
+${input.question}
 
 THE REFRAME UNDER TEST:
 ${reframe.frame}
@@ -321,20 +339,20 @@ VERIFY where you can: a number, run it; a fact, find a primary source or a speci
 Return the structured verdict: survives (true/false); if it dies, killReason (kind, ground = logic or real-test ONLY, evidence); the strongest objection (ALWAYS, even on survival); any consensus flags (flag-only); and per-claim source checks (claim → verdict → source).`;
 }
 
-function judgePrompt(survivors, dead, args) {
-  const isPhilo = args.format === "philosophical";
+function judgePrompt(survivors, dead, unjudged, input) {
+  const isPhilo = input.format === "philosophical";
   const fmtName = isPhilo ? "Format 2c (philosophical)" : "Format 2a (business)";
 
   const businessFormat = `1. Reframe up-front — one short paragraph stating the new frame; lead with it, then earn it.
 2. Body — the 2–4 load-bearing ideas, each in its own section under a heading that names THE IDEA itself (never a method move). Open each with a bolded one-sentence core claim, then prose: what it is, the mechanism, the evidence, the consequence.
 3. Synthesis — how the ideas combine; who wins, who loses, what to do, what to watch. Use a table when it names multiple players or scenarios.${
-    args.includeMvps
+    input.includeMvps
       ? "\n4. Ideas to explore — concrete, buildable instances (not abstractions). Each idea closes with a bolded **MVP:** block of 3–5 numbered bullets, each bullet 12 words or fewer (render the structure directly, not in a code block)."
       : ""
   }
-${args.includeMvps ? "5" : "4"}. Elevation — name the reframe a default pass would not produce; show the transferable move (find what the whole field treats as obviously true, and doubt exactly that) with one short example from a different field; close with the lever stated as a > quote block.
-${args.includeMvps ? "6" : "5"}. Plain-language summary — 4–5 short, jargon-free bullets.
-${args.includeMvps ? "7" : "6"}. ## Verdict & sources — required, last.`;
+${input.includeMvps ? "5" : "4"}. Elevation — name the reframe a default pass would not produce; show the transferable move (find what the whole field treats as obviously true, and doubt exactly that) with one short example from a different field; close with the lever stated as a > quote block.
+${input.includeMvps ? "6" : "5"}. Plain-language summary — 4–5 short, jargon-free bullets.
+${input.includeMvps ? "7" : "6"}. ## Verdict & sources — required, last.`;
 
   const philoFormat = `1. Reframe up-front — one short paragraph stating the new frame.
 2. Arguments — load-bearing ideas (2–4), each in its own section with a bolded one-sentence core claim, then prose (conceptual, not strategic).
@@ -351,8 +369,13 @@ ${args.includeMvps ? "7" : "6"}. ## Verdict & sources — required, last.`;
   const deadBlock = dead.length
     ? dead.map(renderDead).join("\n\n")
     : "(none — every reframe survived its critic)";
+  const unjudgedBlock = unjudged.length
+    ? unjudged.map(renderUnjudged).join("\n\n")
+    : "(none — every reframe received a verdict)";
 
-  return `You are the JUDGE of a reframe arena. ${survivors.length} reframe(s) survived a blind adversarial critic; ${dead.length} were killed. Your job is to PRESENT and RANK — never to decide, re-judge, or kill.
+  return `You are the JUDGE of a reframe arena. ${survivors.length} reframe(s) survived a blind adversarial critic; ${dead.length} were killed${
+    unjudged.length ? "; " + unjudged.length + " never received a verdict (critic unavailable)" : ""
+  }. Your job is to PRESENT and RANK — never to decide, re-judge, or kill.
 
 THE ANTI-FLATTENING RULE — why you exist, stated first.
 You may NOT flatten a weird-but-right reframe toward the safe, conventional one. Downranking or softening a SURVIVING reframe because it is unconventional, strange, or uncomfortable is the single failure this arena was built to stop. The skill names it anti-pattern 4, "the conformity filter": burying an idea for being weird, not wrong — which leaves only the consensus the skill exists to escape. A reframe that survived the critic has earned its place at full strength.
@@ -363,13 +386,16 @@ YOUR HARD LIMITS:
 - You MUST present every surviving reframe at full strength, in its own voice, not smoothed toward the others.
 
 THE QUESTION:
-${args.question}
+${input.question}
 
 SURVIVING REFRAMES (you rank these on merit):
 ${survivorBlock}
 
 KILLED REFRAMES (label, don't delete):
 ${deadBlock}
+
+UNJUDGED REFRAMES (critic unavailable — an infrastructure failure, not a verdict):
+${unjudgedBlock}
 
 THE ANTI-FLATTENING RULE, AGAIN (it is that important).
 The weirdest surviving reframe must reach the reader exactly as strong as it arrived to you. If you catch yourself smoothing it toward the median, stop — that is the conformity filter, and it is forbidden. Present it whole.
@@ -383,7 +409,7 @@ ${chosenFormat}
 The ## Verdict & sources block is required, never folded into prose. Transcribe it from the lead reframe's critic verdict: the strongest objection; a verdict table (one row per load-bearing factual claim → verdict → source) built from that critic's source checks; and the reframe marked tested (name the falsifier and the cheapest test) or bold bet (kept, not yet proven).
 
 PART 2 — ## Other reframes considered.
-Label, don't delete. For each NON-LEAD SURVIVOR: its frame at full strength, why it ranked lower (on merit, never on weirdness), and its critic's strongest objection. For each KILLED reframe: its frame and the kill reason (kind, ground = logic or real-test, evidence). Close by noting the reader is the final judge and may overrule the ranking — the other reframes are shown so they can.
+Label, don't delete. For each NON-LEAD SURVIVOR: its frame at full strength, why it ranked lower (on merit, never on weirdness), and its critic's strongest objection. For each KILLED reframe: its frame and the kill reason (kind, ground = logic or real-test, evidence). For each UNJUDGED reframe: its frame at full strength, labeled "not judged — critic unavailable (infrastructure, not a verdict)"; you may not rank it as the lead (it earned no critic pass) and you may not judge or kill it yourself — you hold no kill authority. Close by noting the reader is the final judge and may overrule the ranking — the other reframes are shown so they can.
 
 Write the whole deliverable already polished: cut dead words, active voice, concrete nouns, at most one em-dash per ~200 words, no preamble, no summary closer, and none of the banned AI vocabulary (delve, tapestry, leverage, landscape, ecosystem, robust, crucial, comprehensive, nuanced, pivotal, and the rest). The reader sees clean prose, never raw JSON.`;
 }
@@ -412,4 +438,11 @@ function renderDead(l) {
   frame: ${l.reframe.frame}
   kill reason: kind=${k.kind || "?"}, ground=${k.ground || "?"}, evidence=${k.evidence || "?"}
   critic's strongest objection: ${l.verdict.strongestObjection}`;
+}
+
+function renderUnjudged(l) {
+  const claims = l.reframe.loadBearingClaims.map((c) => `[${c.type}] ${c.claim}`).join("; ");
+  return `[Unjudged]
+  frame: ${l.reframe.frame}
+  load-bearing claims: ${claims}`;
 }
