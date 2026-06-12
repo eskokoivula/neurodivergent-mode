@@ -18,12 +18,12 @@ reframe, not a longer list of ideas.
 
 Two modes, same engine:
 
-- **Primary brainstorming** — raw problem from scratch.
-- **Elevation pass** — applied to an existing brainstorm to turn parts-thinking
+- **Primary brainstorming:** raw problem from scratch.
+- **Elevation pass:** applied to an existing brainstorm to turn parts-thinking
   into systems-thinking.
 
 The deliverable's structure is set by the question's *category* (business /
-personal-reflective / philosophical) — see `## Step 0`.
+personal-reflective / philosophical); see `## Step 0`.
 
 ## When to trigger
 
@@ -38,7 +38,7 @@ Trigger when the user:
 ### Not this skill
 
 If the user is figuring out *what* to build (clarify requirements, scope,
-choose an approach) — that is the generic brainstorming skill's job. This skill
+choose an approach), that is the generic brainstorming skill's job. This skill
 assumes the question is on the table and reframes it. When in doubt, ask.
 
 ---
@@ -50,10 +50,10 @@ the user picks a mode, so the opening is instant.
 
 1. **Classify silently.** Read the prompt, decide the category (business /
    personal-reflective / philosophical) using the signals below. Do not narrate
-   this — it is cheap.
-2. **Ask one message — the mode pick.** Offer the two modes (ADHD recommended for
+   this; it is cheap.
+2. **Ask one message: the mode pick.** Offer the two modes (ADHD recommended for
    speed). If the category is business, fold the MVP opt-in into the *same*
-   message — one round-trip, not two. See "The opening question" below.
+   message: one round-trip, not two. See "The opening question" below.
 3. **Trigger-word shortcut.** If the user already named a mode, skip the mode
    question. `"adhd mode"` / `"fast"` → ADHD. `"full autist"` / `"deep"` → Full
    autist. (For business with a mode word given, still ask the MVP opt-in.)
@@ -67,9 +67,9 @@ differ only in *how widely the engine explores* and *how the output is written*.
 | Dimension | ADHD mode (fast) | Full autist mode (deep) |
 |---|---|---|
 | Engine breadth | One decisive anomaly; 1–2 cross-domain patterns max | Wide wandering; many domains explored |
-| Move 2 simulation | Minimal — just enough to find the hinge | Full, multiple runs |
+| Move 2 simulation | Minimal, just enough to find the hinge | Full, multiple runs |
 | `references/foundation.md` | Not read | May consult to deepen |
-| Writing | Single pass — written already polished | Produce, then polish |
+| Writing | Single pass, written already polished | Produce, then polish |
 | Load-bearing ideas | 2 | 3–4 |
 | Self-check | Slim (key checks only) | Full |
 | Selection pass | One quick self-refutation | Full adversarial pass |
@@ -125,7 +125,7 @@ Business format has one optional element: **Ideas to explore** with numbered
 opening question above (folded into the same message as the mode pick).
 
 If the user says yes, include Section 4. If no, omit it. Never ask this for
-personal-reflective or philosophical questions — those formats have no such
+personal-reflective or philosophical questions; those formats have no such
 section.
 
 ### Selection path — which critic runs
@@ -153,19 +153,19 @@ Nothing breaks where the Workflow tool is absent.
 The engine works by **deliberate mind-wandering**: it moves off the obvious path
 on purpose (drift), then moves back on purpose to land a usable result (return).
 Both halves are mandatory; order matters. Only *deliberate* wandering produces
-creative results — *spontaneous* drift is losing the thread. (See
+creative results; *spontaneous* drift is losing the thread. (See
 `references/foundation.md`, Section 1.)
 
-- **Drift** = deliberate move off path — into detail, other domains, other people's experience.
-- **Return** = deliberate move back — build a principle, test it, land a reframe.
+- **Drift** = deliberate move off path: into detail, other domains, other people's experience.
+- **Return** = deliberate move back: build a principle, test it, land a reframe.
 - Drift without return = jumpy transcript. Return without drift = filled-in worksheet. Both, in order, every time.
 
 ### The engine is not the deliverable
 
-**The engine** runs in your head — associative, non-linear, jumpy. That jumpiness
+**The engine** runs in your head: associative, non-linear, jumpy. That jumpiness
 is the drift, and it is where non-default insight comes from. Nobody sees it.
 
-**The deliverable** is engineered synthesis — clearly structured, every idea fully
+**The deliverable** is engineered synthesis: clearly structured, every idea fully
 opened. Do the jumpy work in your head; deliver the structured synthesis.
 
 ---
@@ -173,20 +173,20 @@ opened. Do the jumpy work in your head; deliver the structured synthesis.
 ## The engine: the five-move chain
 
 Five moves: 1–3 are drift, 4–5 are return. See `## The core principle` above for the
-drift/return mechanism. Mode governs how widely the chain explores — see Step 0.
+drift/return mechanism. Mode governs how widely the chain explores; see Step 0.
 
 **Mode governs depth here:**
-- **ADHD mode** — run the chain *tight*. One decisive anomaly, 1–2 cross-domain
+- **ADHD mode:** run the chain *tight*. One decisive anomaly, 1–2 cross-domain
   patterns, one principle. Keep internal reasoning economical: do not enumerate
   many domains, do not draft-then-rewrite, do not read `references/foundation.md`. Find the
   hinge fast and write.
-- **Full autist mode** — run the chain *wide*. Explore many domains, simulate
+- **Full autist mode:** run the chain *wide*. Explore many domains, simulate
   fully, consult `references/foundation.md` §6.1 (the Einstein light-beam example)
-  when the chain feels abstract — if the file is not present, proceed without it.
+  when the chain feels abstract; if the file is not present, proceed without it.
 
 ### Move 1 — Concrete detail, not a frame  *(drift · detail-first)*
 
-Begin with the raw specifics — actual details, anomalies, things that do not
+Begin with the raw specifics: actual details, anomalies, things that do not
 fit the tidy story. **Pattern is built upward from specifics, not handed down
 from an assumption.** Frame too early and the rest of the chain just decorates
 the obvious answer.
@@ -204,7 +204,7 @@ to list in the output.
 ### Move 3 — Wander to other domains  *(drift · divergent)*
 
 Where else does this exact structure appear? *ADHD mode: reach for 1–2 far
-patterns and move on — no domain tour. Full autist: wander widely across
+patterns and move on, no domain tour. Full autist: wander widely across
 biology, history, software, physics, markets, games, language, music.* A detour
 earns its place only if it brings something back (Move 4).
 
@@ -239,7 +239,7 @@ how every crank thinks; what divides a real reframe from a confident wrong one i
 survival under attack.
 
 Two separations, both required. **In time:** generate the whole reframe first,
-judge second, never during — a generator that anticipates the critic produces safe,
+judge second, never during. A generator that anticipates the critic produces safe,
 obvious work, the failure this skill exists to avoid. (That is drift-then-return,
 see `## The core principle`, one step further.) **In mind:** the critic is a
 different mind, not the same model grading itself, which shares its own blind spots.
@@ -260,15 +260,15 @@ falseness lives in a step. Test the steps, never the conclusion's strangeness.
 
 A kill must be grounded, and the ground sets its power:
 
-1. **Logic** — a contradiction is false in any paradigm. Always allowed.
-2. **A real test you run** — a calculation, a primary source, a named
+1. **Logic.** A contradiction is false in any paradigm. Always allowed.
+2. **A real test you run.** A calculation, a primary source, a named
    counterexample. Allowed when available.
-3. **Consensus (your training)** — never a kill, only a flag: *you disagree with
+3. **Consensus (your training).** Never a kill, only a flag: *you disagree with
    everyone; wrong, or ahead?* Every paradigm shift was false by its era's
    consensus, and the skill exists to beat consensus, so consensus cannot judge it.
 
 Kill only on 1 or 2. A kill is a load-bearing claim: source it, never assert it
-from memory (`## Citations and research`). Where nothing grounds it, do not kill —
+from memory (`## Citations and research`). Where nothing grounds it, do not kill:
 label it a bold bet and name the test that would settle it.
 
 ### How to verify, and what counts as a source
@@ -290,14 +290,14 @@ pages disagree" is consensus in a lab coat. Flag it, never kill.
   (never folded into prose). A reframe killed for being wrong is named with its
   reason, never dropped in silence.
 - **By mode.** ADHD: the same model, one quick self-refutation on logic, label the
-  rest a bet, no search, no separate agent — fast. Full autist: where the Workflow
-  tool exists (Claude Code), run the multi-agent arena (`## The arena`) — parallel
+  rest a bet, no search, no separate agent. Fast. Full autist: where the Workflow
+  tool exists (Claude Code), run the multi-agent arena (`## The arena`): parallel
   generators, a blind critic per reframe, a judge; else spawn a single separate blind
   critic agent where the environment allows (else a full same-model pass), and run the
   verification above.
 - **By format.** Business and philosophical: end with a **required Verdict block**
-  (claim → verdict → source, the strongest objection, and the tested/bold-bet mark)
-  — always visible, never folded away. See Format 2a §7. Philosophical also keeps
+  (claim → verdict → source, the strongest objection, and the tested/bold-bet mark),
+  always visible, never folded away. See Format 2a §7. Philosophical also keeps
   its **Counterarguments** section, which attacks the reframe's *truth* in prose;
   the Verdict block adds the factual sourcing. Personal-reflective: no gate and no
   Verdict block; the critic never judges a feeling, and the output carries only a
@@ -315,48 +315,48 @@ its own blind critic, then a judge that ranks and presents the survivors. About
 seven agents, all Opus, written as a Workflow script in `references/arena.js`.
 
 **When it runs.** Full autist mode, the Workflow tool available, business or
-philosophical category — the full ladder is in `## Step 0 → Selection path`. A
+philosophical category; the full ladder is in `## Step 0 → Selection path`. A
 skill instructing the Workflow tool is a valid opt-in for that tool, so the run is
 automatic, no extra prompt. To run it, read `references/arena.js` and pass its
 contents as the Workflow tool's `script` with `args = {question, format,
 isElevation, priorOutput, includeMvps}`. For an elevation pass, keep `priorOutput`
-compact — it is embedded into all three generator prompts, so a long prior
+compact: it is embedded into all three generator prompts, so a long prior
 analysis triples its own token cost; summarise it first if it is long.
 
 **Three generators, one per drift direction.** `references/foundation.md` has
-exactly three real drift directions — detail-first (§2.1), divergent (§2.2),
+exactly three real drift directions: detail-first (§2.1), divergent (§2.2),
 social (§2.3). "Global" (§2.4) is the return-side switch, not a drift axis, so it
 is not a generator. Each generator is forced down one direction as a hard
 divergence constraint, so the three reframes diverge by construction instead of
 restating one answer.
 
 **Critics hold the kill authority, not the judge.** Each reframe gets one blind
-critic that never saw how it was made — it is not even told which drift direction
+critic that never saw how it was made; it is not even told which drift direction
 produced it. The critic carries the exact calibration from `## The selection
 layer`: attack the road not the destination, kill only on logic or a real test,
 consensus can only flag. A reframe dies only on a sourced logic or fact error.
 
 **The judge presents, it does not decide.** The judge ranks survivors on merit,
 writes the lead reframe in full Format 2a or 2c (including the required Verdict
-block, transcribed from the lead critic's checks), and lists every other reframe —
-survivors and killed — with reasons ("label, don't delete"). It may not kill, and
+block, transcribed from the lead critic's checks), and lists every other reframe,
+survivors and killed, with reasons ("label, don't delete"). It may not kill, and
 it may not flatten a weird-but-right survivor toward the safe one. That flattening
 is anti-pattern 4, "the conformity filter"; stopping it is the whole reason the
 judge is a presenter, not a decider. The human is the final judge.
 
-**Pipeline, not lock-step.** Generate→critique runs per lane independently — a fast
-lane is critiqued while a slow one still generates — and the judge runs once, after
+**Pipeline, not lock-step.** Generate→critique runs per lane independently (a fast
+lane is critiqued while a slow one still generates), and the judge runs once, after
 all lanes resolve. A lane whose critic never returns is carried as **unjudged**:
 presented and labeled, never silently dropped (a lost verdict is infrastructure,
 not a kill).
 
 **Exit statuses.** Normally the arena returns the finished markdown deliverable.
-Two structured exits instead: `{status: "no_survivors"}` — no reframe earned a
+Two structured exits instead. `{status: "no_survivors"}`: no reframe earned a
 critic's pass; it lists `killed` (with reasons) and `unjudged`, invents no winner,
 and the skill then runs the single-pass fallback and surfaces why each reframe
-died. `{status: "no_question"}` — `args.question` was empty, so no agents were
+died. `{status: "no_question"}`: `args.question` was empty, so no agents were
 spawned; re-invoke the Workflow tool with `args.question` bound (the input was
-broken, not the reframes — do not fall back).
+broken, not the reframes; do not fall back).
 
 **Output.** One clean deliverable: the lead reframe in full, then `## Other
 reframes considered`. Never the raw structured JSON. See `## Output` for the
@@ -370,14 +370,14 @@ The 5-move engine runs the same in all three formats. Only the output structure
 differs, based on the category detected in `## Step 0 — Open: classify, then pick a mode`.
 
 The structured output is then polished in the same reasoning step (Orwell/Gowers
-+ AI detox rules — see `## Polish` below) before being shown to the user.
++ AI detox rules; see `## Polish` below) before being shown to the user.
 
 ### Surface formatting by environment
 
 - **Claude Code (file-based / terminal):** markdown headings for the idea sections;
   the output is a standalone, navigable artifact.
 - **Claude.ai (conversational):** bold idea-headings or clear section breaks, short
-  paragraphs. Still fully structured — conversational does not mean unstructured.
+  paragraphs. Still fully structured: conversational does not mean unstructured.
 
 ---
 
@@ -386,7 +386,7 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
 1. **Reframe up-front.** One short paragraph stating the new frame. Lead with
    it, then earn it.
 
-2. **Body — load-bearing ideas.** The reframe rests on 2–4 load-bearing ideas.
+2. **Body: load-bearing ideas.** The reframe rests on 2–4 load-bearing ideas.
    Each gets its own section with a heading that names *the idea itself* (never
    a method move). Open each section with a bolded one-sentence **core claim**,
    then expand in prose: what the idea is, the mechanism, the evidence, the
@@ -398,22 +398,22 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
      stripped-out social layer always returns".
 
 3. **Synthesis.** How the load-bearing ideas combine. State implications
-   concretely — who wins, who loses, what to do, what to watch.
+   concretely: who wins, who loses, what to do, what to watch.
 
    **Use a table when the synthesis lists multiple players, scenarios, or
    winners/losers.** A short framing sentence plus a table is sharper than a
    six-sentence paragraph naming five players.
 
 4. **[Opt-in] Ideas to explore.** Generated *only if* the user said yes in
-   Step 0. Each idea is a concrete, buildable thing — not "legibility matters"
+   Step 0. Each idea is a concrete, buildable thing: not "legibility matters"
    but the specific thing someone could sketch tomorrow. Bold is allowed;
    ungrounded is not.
 
    **Each idea must close with a bolded `**MVP:**` block followed by 3–5
-   numbered bullet points** — not a prose sentence. The MVP is the most
+   numbered bullet points**, not a prose sentence. The MVP is the most
    scan-critical part of the deliverable; visual structure beats prose.
 
-   Format per idea (render this structure directly — do not wrap in a code block):
+   Format per idea (render this structure directly; do not wrap in a code block):
 
    **Idea A: [short name]**
 
@@ -430,12 +430,12 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
    MVP block in 5 seconds; if it takes longer, the bullets are too long.
 
 5. **Elevation.** Name the reframe a neurotypical pass would not have produced.
-   Then show *how the problem was attacked*: the transferable move — typically,
+   Then show *how the problem was attacked*: the transferable move. Typically,
    find what the whole field treats as obviously true and doubt exactly that.
    Make that move concrete with one short example from a different field, so
    the reader sees it is a portable lever, not a one-off.
 
-   **Close the section with the transferable lever stated as a quote block** —
+   **Close the section with the transferable lever stated as a quote block**:
    one to two sentences, no qualifications. The lever is the most reusable
    thing in the whole deliverable; it deserves the visual prominence of a
    callout.
@@ -455,18 +455,18 @@ The structured output is then polished in the same reasoning step (Orwell/Gowers
    - **Reframe mark.** The overall reframe labelled **tested** (name the falsifier
      and the cheapest test) or **bold bet** (kept, not yet proven).
    - **By mode.** Full autist: full table with a source per row (a separate blind
-     critic ran real verification). ADHD: no sourced table — no search ran — so give
+     critic ran real verification). ADHD: no sourced table (no search ran), so give
      the strongest objection, the tested/bold-bet marks, and one line: *"ADHD mode:
      logic check only, no web verification."*
 
 This format runs the full selection layer on the finished reframe and always ends
-with the Verdict block above — see `## The selection layer`.
+with the Verdict block above; see `## The selection layer`.
 
 ---
 
 ### Format 2b — Personal-reflective / opinion
 
-The same engine runs. The output is essayistic — first-person voice ("I").
+The same engine runs. The output is essayistic: first-person voice ("I").
 The user is asking for a reflective answer (e.g., an application essay,
 opinion piece, blog post), not a strategic analysis.
 
@@ -475,12 +475,12 @@ opinion piece, blog post), not a strategic analysis.
    detail-first move surfaced.
 
 2. **Resonance.** What in the question resonates and from where it recognises.
-   Name the felt resonance precisely — what *exactly* the question touches,
+   Name the felt resonance precisely: what *exactly* the question touches,
    not a vague "this matters to me".
 
 3. **Mechanism.** The structural reason for the resonance: a cross-domain
    pattern, a social mechanism, a personal disposition. This is where the
-   engine's Move 3 (divergent wander) lands — the underlying structure that
+   engine's Move 3 (divergent wander) lands: the underlying structure that
    explains why the question lands.
 
 4. **Demonstration.** A concrete vignette or example showing the mechanism
@@ -492,11 +492,11 @@ opinion piece, blog post), not a strategic analysis.
 
    **MUST NOT fabricate the user's own personal stories.** If the user has
    supplied their own material in the prompt, draw on that; otherwise use
-   external examples. The rule is real and load-bearing — fabricated
+   external examples. The rule is real and load-bearing: fabricated
    first-person anecdotes attributed to the user are a hard fail.
 
 5. **Forward look.** What this shifts in thinking. Not a recommendation, not
-   a buildable — a reorientation. Where this lands the writer next.
+   a buildable: a reorientation. Where this lands the writer next.
 
 **Excluded** (not produced in this format): MVP bullets, synthesis table, lever
 quote block, "ideas to explore", falsifiability gate, Verdict block. You do not
@@ -506,7 +506,7 @@ refute a personal reflection; keep only the no-fabrication honesty check above (
 **Honesty note (the only selection output here).** Close with one short line, not a
 table or a heading: confirm no facts about the writer were invented, and cite a
 source for any external fact used in the Demonstration. No verdict table, no
-tested/bold-bet mark — a personal reflection is not refuted.
+tested/bold-bet mark; a personal reflection is not refuted.
 
 **Voice:** first-person essay ("I"). Sentence rhythm is essayistic,
 not list-driven.
@@ -534,11 +534,11 @@ philosophy or long-form analysis piece than a strategy deliverable.
    attack the reframe's truth, not its daring.
 
 4. **Synthesis.** How arguments and counterarguments combine, what remains
-   open, what is *not* settled. Prose, no table — philosophical synthesis is
+   open, what is *not* settled. Prose, no table; philosophical synthesis is
    not a winners/losers comparison.
 
 5. **Implications.** What follows in thinking or action. Not a buildable; more
-   a reorientation of the conceptual landscape — what becomes a sharper
+   a reorientation of the conceptual landscape: what becomes a sharper
    question now that the reframe stands.
 
 6. **Elevation.** Same role as in business: name the transferable move, give a
@@ -564,14 +564,14 @@ buildables.
 ## Polish: apply integrated, in the same step
 
 The structured output never reaches the user as-is. Apply the polish rules below
-**in the same reasoning step that produced the output** — do not invoke a
+**in the same reasoning step that produced the output**; do not invoke a
 separate skill. The user sees one clean deliverable.
 
 **By mode:**
-- **ADHD mode** — write the deliverable *once*, already polished. Treat the rules
+- **ADHD mode:** write the deliverable *once*, already polished. Treat the rules
   below as writing constraints, not a separate rewrite pass. One quick scan at the
   end, not a sentence-by-sentence audit.
-- **Full autist mode** — write, then do a full polish pass over it.
+- **Full autist mode:** write, then do a full polish pass over it.
 
 (These rules are adapted from `plain-english-skill` by Birdmania —
 https://github.com/b1rdmania/claude-plain-english-skill — and integrated here
@@ -589,7 +589,7 @@ to remove the second skill-activation cost.)
 
 ### AI detox (apply second)
 
-8. **Banned vocabulary — substitute or delete:**
+8. **Banned vocabulary (substitute or delete):**
    *delve, tapestry, navigate, leverage, landscape, ecosystem, realm,
    multifaceted, foster, underscore, robust, comprehensive, nuanced, paramount,
    crucial, holistic, pivotal, facilitate, utilize, methodology, commence,
@@ -601,7 +601,7 @@ to remove the second skill-activation cost.)
 13. **No reflex rule-of-three.** If content has two or four points, use two or four. Don't pad.
 14. **Vary sentence length.** Mix short punchy sentences with longer ones. AI clusters around 18–22 words; good prose ranges 4–40.
 15. **No sycophancy.** No *"great point"* or validating the user's framing.
-16. **Cut hedge stacks.** *Genuinely, honestly, it's worth noting, I find that, arguably* — one hedge per claim, max.
+16. **Cut hedge stacks.** *Genuinely, honestly, it's worth noting, I find that, arguably*: one hedge per claim, max.
 
 ### Banned constructions (substitute)
 
@@ -647,12 +647,12 @@ follows it. Naming the mechanism is what lets you catch it.
    and labelled mini-lists ("Detail:", "Analogy:", "Move 4:"). The form eats the
    content. This is return running with no real drift inside it.
 
-2. **The stream.** Spontaneous wandering leaked onto the page — ideas stated,
+2. **The stream.** Spontaneous wandering leaked onto the page: ideas stated,
    gestured at, jumped away from, never developed. A transcript of an associative
    mind is not a deliverable. This is drift with the return missing.
 
 3. **The clever fragment.** A sharp reframe with no developed body. The mind
-   drifted, found something genuinely good, and stopped — return began but never
+   drifted, found something genuinely good, and stopped; return began but never
    finished. The insight is real but the reader cannot act on it.
 
 All three fail the same way: one half of the engine ran without the other. See `## The core principle` for why both halves are mandatory.
@@ -677,7 +677,7 @@ calibration. See `## The selection layer` for the rule that prevents both.
 **ADHD mode — slim check (fast):**
 1. Mode picked before the engine ran? Format matches category?
 2. Opt-in respected? (Business+yes → Section 4 with numbered MVP bullets; business+no → absent.)
-3. Personal-reflective Demonstration is cross-domain / historical / fictional — never a fabricated user anecdote.
+3. Personal-reflective Demonstration is cross-domain / historical / fictional, never a fabricated user anecdote.
 4. Polished as written, no meta-commentary leaked, user sees no raw intermediate.
 5. Not just a "smarter version of the obvious answer" (restart from Move 1 if it is)? And it survived one honest objection, killed for wrong and not for weird?
 6. Business/philosophical: Verdict block present at the end (strongest objection + tested/bold-bet marks; "logic check only, no web verification")? Personal-reflective: one-line honesty note present?
