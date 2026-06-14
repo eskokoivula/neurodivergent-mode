@@ -13,6 +13,8 @@ The result is not “10 more ideas.”
 The result is:
 “Wait. Are we even asking the right question?”
 
+That is the power of this skill in one line: it does not optimize the answer you already have — it attacks the frame that produced it. It forces reasoning down three genuinely different paths, sends a blind adversary to kill whichever ones break, and refuses to flatten the strange-but-correct survivor into the safe one. What survives that gauntlet is not a tidier opinion. It is a reframe a normal pass cannot reach.
+
 Humanity did not evolve through consensus. It evolved because some people noticed what everyone else missed. Einstein looked at time and said “what if it’s not fixed?” Newton saw an apple fall and pulled a law of nature out of it. Tesla helped wire the modern world. Satoshi Tajiri turned bug collecting into Pokémon and permanently altered childhood. The list goes on and on.
 
 Progress has always depended on cognitive variation: explorers, pattern-spotters, obsessives, system-builders, danger-sensors, and the beautifully inconvenient people who looked at the tribe’s obvious answer and said:
@@ -88,9 +90,23 @@ The rule is deliberately narrow: kill a reframe only for a broken step — a fal
 
 In Claude Code the critic runs as a *separate* agent, blind to how the reframe was built, so the judge doesn't inherit the generator's blind spots. Business and philosophical answers then end with a visible **Verdict** block: the strongest objection, each load-bearing claim checked against a source, and the reframe marked *tested* or *bold bet* — kept, but not yet proven.
 
-In **Full autist mode**, Claude Code takes this further into a parallel **arena**: three generators, each forced down a different reasoning direction, produce three genuinely different reframes; a separate blind critic tries to kill each one; and a judge ranks the survivors and presents them — forbidden from flattening a weird-but-right reframe into the safe one. You see the lead reframe in full, then every other reframe considered, including the killed ones and why they died. Where the Workflow tool isn't available (plain chat), it falls back to the single-critic pass above.
+---
 
-A heads-up on cost: the arena is heavyweight — about seven agents, all running on Opus, and a single run can consume a few hundred thousand tokens. The single-critic fallback is far lighter.
+## The arena: where the skill is most powerful
+
+In **Full autist mode** inside Claude Code, the selection layer stops being one critic and becomes a parallel **arena** — the strongest thing this skill does. It is the difference between one mind second-guessing itself and a whole adversarial process fighting to break the answer before you ever see it.
+
+It runs in three stages:
+
+1. **Three generators, forced apart.** Three reasoning agents run in parallel, each locked onto a different drift direction — detail-first, divergent, and social. The constraint is hard, so the three reframes diverge *by construction* instead of restating one safe answer in three voices.
+2. **A blind critic per reframe, holding the kill switch.** Each reframe meets its own critic that never saw how it was built and isn't told which direction produced it. The critic attacks the road, not the destination: it kills only on a real logic or fact error, and consensus ("everyone disagrees") can flag a claim but never kill it. Weird-but-right always survives.
+3. **A judge that presents, never decides.** A final judge ranks the survivors and writes up the lead reframe in full, but it is forbidden from killing anything and forbidden from flattening a strange-but-correct survivor toward the comfortable one. You stay the final judge.
+
+You get one clean deliverable: the lead reframe in full, then **every other reframe considered** — survivors and the killed ones alike, each with the reason it lived or died. Nothing is silently dropped.
+
+Where the Workflow tool isn't available (plain chat, Claude.ai), the arena falls back to the single blind-critic pass above — same discipline, one lane instead of three.
+
+A heads-up on cost: the arena is heavyweight — about seven agents, all running on Opus, and a single run can consume a few hundred thousand tokens. That weight is the point; the single-critic fallback is far lighter.
 
 ---
 
