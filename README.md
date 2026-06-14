@@ -173,10 +173,15 @@ This repo takes the cognitive structure useful for reasoning and applies it deli
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT
 
 ---
 
 ## Built by
 
-[Esko Koivula](https://github.com/eskokoivula) with Claude.
+Esko Koivula
+X: @theheadhoghog
+LinkedIn: https://www.linkedin.com/in/esko-koivula
+Email: esko.koivula1@gmail.com
+
+Interested in connecting with people building the next generation of AI systems, especially in areas involving multi-step decision-making, autonomous workflows, long-horizon problem solving, and practical deployment of agentic systems.
