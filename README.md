@@ -86,6 +86,8 @@ To force a format, say `reflect on this` (personal essay), `elevate this philoso
 
 A bold reframe and a confident wrong one look the same on the page. So the skill doesn't just generate — it runs every reframe through an adversarial **selection layer** before shipping it.
 
+Here is why that layer exists. Generation was never the hard part to fix: the engine already does it well, producing reframes a default pass would not. The missing half is the other half of every real thinking system — **selection**. A mechanism that attacks the reframe, tests it against reality, and ships only what survives. *Doubt the frame, trust the anomaly* is the method of Einstein. It is also the method of every crackpot who ever lived. The only thing that separates the two is a test the idea is forced to pass, and that test is what this layer adds.
+
 The rule is deliberately narrow: kill a reframe only for a broken step — a false fact, a bad inference — never for being *weird*. Weird-but-right is the whole point. Consensus ("everyone disagrees") can flag a claim but never kill it; every paradigm shift was wrong by the consensus of its day.
 
 In Claude Code the critic runs as a *separate* agent, blind to how the reframe was built, so the judge doesn't inherit the generator's blind spots. Business and philosophical answers then end with a visible **Verdict** block: the strongest objection, each load-bearing claim checked against a source, and the reframe marked *tested* or *bold bet* — kept, but not yet proven.
@@ -173,7 +175,7 @@ Generic *"brainstorm X"* requests usually go to the general brainstorming skill,
 
 ## Research foundation
 
-The method's structure is grounded in peer-reviewed research — on mind-wandering and creativity, divergent and convergent thinking, detail-first perception and systemizing, and the double empathy account of social reasoning. Each concept is written out in plain language, with its source cited as a footprint, in [`neurodivergent-mode/references/foundation.md`](neurodivergent-mode/references/foundation.md). The full reference list is at the end of that document.
+This is not vibes. The method is built on peer-reviewed studies of neurodivergent reasoning, and modeled on the documented thinking patterns of known neurodivergent thinkers — Einstein's light-beam thought experiment anchors the whole five-move chain. Concretely, its structure is grounded in research on mind-wandering and creativity, divergent and convergent thinking, detail-first perception and systemizing, and the double empathy account of social reasoning. Each concept is written out in plain language, with its source cited as a footprint, in [`neurodivergent-mode/references/foundation.md`](neurodivergent-mode/references/foundation.md). The full reference list is at the end of that document.
 
 The research supports the *structure* of the method. It does not make this "better thinking" — see below.
 
