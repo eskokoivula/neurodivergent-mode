@@ -86,7 +86,7 @@ To force a format, say `reflect on this` (personal essay), `elevate this philoso
 
 A bold reframe and a confident wrong one look the same on the page. So the skill doesn't just generate — it runs every reframe through an adversarial **selection layer** before shipping it.
 
-Here is why that layer exists. Generating a bold reframe is only half of any real thinking system. The other half is **selection**: a mechanism that attacks the reframe, tests it against reality, and ships only what survives. *Doubt the frame, trust the anomaly* is the method of Einstein. It is also the method of every crackpot who ever lived. The only thing that separates the two is a test the idea is forced to pass, and that test is exactly what this layer is.
+Here is why that layer exists. Generating a reframe is only half of any real thinking system. The other half is **selection**: a mechanism that attacks the reframe, tests it against reality, and ships only what survives. *Doubt the frame, trust the anomaly* is the method of Einstein. It is also the method of every crackpot who ever lived. The only thing that separates the two is a test the idea is forced to pass, and that test is exactly what this layer is.
 
 The rule is deliberately narrow: kill a reframe only for a broken step — a false fact, a bad inference — never for being *weird*. Weird-but-right is the whole point. Consensus ("everyone disagrees") can flag a claim but never kill it; every paradigm shift was wrong by the consensus of its day.
 
